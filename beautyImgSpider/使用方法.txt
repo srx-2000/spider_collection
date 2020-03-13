@@ -1,0 +1,29 @@
+### scrapy框架的安装：
+
+由于网上各种Scrapy的安装方法都过于麻烦所以在这里提供一个有效而简单的方法：打开cmd或者gitbash键入：
+
+``````
+pip install scrapy -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+``````
+
+即可一步安装成功，此方法截止2020年3月13日仍有效。
+
+### 运行爬虫：
+
+使用gitbash键入：
+
+```git clone https://github.com/srx-2000/git_spider/tree/master/beautyImgSpider```
+
+将改文件及其附属文件克隆到电脑中
+
+然后在gitbash中转到与此文件同级目录下
+
+键入命令：
+
+```scrapy crawl beautyImg```
+
+等待爬取结果即可，该爬虫爬取的图片全部存入```D://美女图片//full```中，若想更改存储地方，请打开setting.py文件，将其中的```IMAGES_STORE=```后面的文字换为你想存入的路径即可。
+
+### 其他
+
+由于这里爬取的是[该网站](http://desk.zol.com.cn/bizhi/)上的所有壁纸，所以数量还是不少的，如果达到了你想要爬去的图片的数量在gitbash中键入```Ctrl+c```即可停止爬虫。
