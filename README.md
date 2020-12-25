@@ -7,7 +7,8 @@
 1. 一个壁纸网站的爬图spider（Scrapy）
 2. 一个答案网的学习强国的答案spider+结果文档（Scrapy）
 3. 一个网易云音乐的歌单下载程序（BeautifulSoup+request）
-4. ......
+4. 一个B站视频爬取spider（Scrapy+you-get）
+5. ......
 
 在这里谢过所有我看过的教学视频，网站。
 
