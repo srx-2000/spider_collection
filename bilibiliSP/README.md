@@ -1,8 +1,10 @@
 ### b站视频爬虫
 
-**功能：**爬取某个up的大部分视频
+**功能**
+爬取某个up的大部分视频
 
-**使用到的库和框架：**scrapy+[you-get](https://github.com/soimort/you-get)
+**使用到的库和框架**
+scrapy+[you-get](https://github.com/soimort/you-get)
 
 **使用方法**
 
