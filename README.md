@@ -9,7 +9,8 @@
 3. 一个网易云音乐的歌单下载程序（BeautifulSoup+request）
 4. 一个B站视频爬取spider（Scrapy+you-get）
 5. 一个知乎问答多线程爬虫（requests+json+re+threading）
-6. ........
+6. 一个xvideos视频爬虫（requests+scrapy+json+parsel+cookiejar+threading）
+7. ........
 
 在这里谢过所有我看过的教学视频，网站。
 
