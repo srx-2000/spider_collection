@@ -70,7 +70,8 @@ def main():
         print("创建文件夹"+title)
     for item in song_dic:
         print(item,end="    ")
-        path=title+'/'+item+'.mp3'
+        path=\
+            +'/'+item+'.mp3'
         getMusic(song_dic[item],path)
 if __name__=='__main__':
     main()
