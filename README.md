@@ -10,7 +10,8 @@
 4. 一个B站视频爬取spider（Scrapy+you-get）
 5. 一个知乎问答多线程爬虫（requests+json+re+threading）
 6. 一个xvideos视频爬虫（requests+scrapy+json+parsel+cookiejar+threading）
-7. ........
+7. 一个有声小说音频爬虫（request+os+parsel+threading+mongodb+re）
+8. ……
 
 在这里谢过所有我看过的教学视频，网站。
 
