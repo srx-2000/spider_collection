@@ -38,13 +38,13 @@ $(document).ready(function(){
 
 <a id="b">**功能**</a>
 
-- [基础功能](https://github.com/srx-2000/git_spider/tree/audioBook-1.0)
+- 根据有声书id多线程爬取全部音频
 
 <a id="c">**使用方法**</a>
 
 ​	需要使用到的库已经放在各个版本的requirements.txt文件中了，使用pip安装的可以使用指令`pip install -r requirements.txt`。如果国内安装第三方库比较慢，可以使用以下指令进行清华源加速`pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/`
 
-*  [version-1.0](https://github.com/srx-2000/git_spider/tree/audioBook-1.0/#b)
+*  在[网站](https://www.ishuyin.com)上获取相应的有声书id，并将该id填写到代码第90行位置，两次运行download.py文件即可。
 
 <a id='d'>**环境**</a>
 
