@@ -12,7 +12,8 @@
 6. 一个xvideos视频爬虫（requests+scrapy+json+parsel+cookiejar+threading）
 7. 一个有声小说音频爬虫（request+os+parsel+threading+mongodb+re）
 8. 一个微博个人信息爬虫（requests+os+parsel+threading+re+random+time+json+pandas）
-9. ……
+9. 一个安居客武汉租房信息爬虫+数据清洗+分析+数据可视化(request+pandas+parsel+matplotlib)
+10. ……
 
 在这里谢过所有我看过的教学视频，网站。
 
