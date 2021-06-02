@@ -1,5 +1,5 @@
 Scrapy==2.4.1
-urllib3==1.25.9
+urllib3==1.26.5
 requests==2.23.0
 parsel==1.6.0
 pymongo==3.11.2
