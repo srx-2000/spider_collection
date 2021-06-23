@@ -29,7 +29,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github clone\git_spider\bilibiliSP\bilibiliSP\spiders" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.SP_download">
     <configuration name="SP_download" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="bilibiliSP" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -52,9 +57,55 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ThreadPool" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bilibiliSP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bilibiliSP/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bilibiliSP/spiders/ThreadPool.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bilibili" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bilibiliSP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bilibiliSP/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bilibiliSP/spiders/bilibili.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.SP_download" />
+        <item itemvalue="Python.bilibili" />
+        <item itemvalue="Python.ThreadPool" />
       </list>
     </recent_temporary>
   </component>
@@ -70,7 +121,11 @@
       <updated>1608900837710</updated>
       <workItem from="1608900838940" duration="344000" />
       <workItem from="1608901341013" duration="1487000" />
-      <workItem from="1608902852414" duration="715000" />
+      <workItem from="1608902852414" duration="1933000" />
+      <workItem from="1610280166227" duration="4464000" />
+      <workItem from="1610336005070" duration="599000" />
+      <workItem from="1610344767690" duration="599000" />
+      <workItem from="1624486646048" duration="823000" />
     </task>
     <servers />
   </component>
@@ -78,24 +133,26 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="724" height="317" key="GridCell.Tab.0.bottom" timestamp="1608902829296">
+    <state width="1493" height="329" key="GridCell.Tab.0.bottom" timestamp="1624486984358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="317" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608902829296" />
-    <state width="724" height="317" key="GridCell.Tab.0.center" timestamp="1608902829295">
+    <state width="1493" height="329" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1624486984358" />
+    <state width="1493" height="329" key="GridCell.Tab.0.center" timestamp="1624486984358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="317" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608902829295" />
-    <state width="724" height="317" key="GridCell.Tab.0.left" timestamp="1608902829295">
+    <state width="1493" height="329" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1624486984358" />
+    <state width="1493" height="329" key="GridCell.Tab.0.left" timestamp="1624486984358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="317" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608902829295" />
-    <state width="724" height="317" key="GridCell.Tab.0.right" timestamp="1608902829296">
+    <state width="1493" height="329" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1624486984358" />
+    <state width="1493" height="329" key="GridCell.Tab.0.right" timestamp="1624486984358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="317" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608902829296" />
+    <state width="1493" height="329" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1624486984358" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/bilibiliSP$SP_download.coverage" NAME="SP_download Coverage Results" MODIFIED="1608902804077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSP/spiders" />
+    <SUITE FILE_PATH="coverage/bilibiliSP$ThreadPool.coverage" NAME="ThreadPool Coverage Results" MODIFIED="1610294740736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSP/spiders" />
+    <SUITE FILE_PATH="coverage/bilibiliSP$bilibili.coverage" NAME="bilibili Coverage Results" MODIFIED="1624486952006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSP/spiders" />
+    <SUITE FILE_PATH="coverage/bilibiliSP$SP_download.coverage" NAME="SP_download Coverage Results" MODIFIED="1624486984351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSP/spiders" />
   </component>
 </project>

@@ -4,6 +4,8 @@ import os
 import you_get
 import threading
 
+from bilibiliSP.spiders.ThreadPool import ThreadPool
+
 url_list=[]
 
 def read_file():
@@ -17,14 +19,12 @@ def download(url):
     you_get.main()
     # pass
 
-def downloadAll():
-    threads=[]
+def downloadAll(thread_num):
+    pool = ThreadPool(thread_num)
     for i in url_list:
-        th=threading.Thread(target=download,args=(i,))
-        th.start()
-        threads.append(th)
-    for th in threads:
-        th.join()
+        # print(i)
+        pool.run(func=download, args=(i,))
+    pool.close()
 if __name__ == '__main__':
     read_file()
-    downloadAll()
+    downloadAll(10)

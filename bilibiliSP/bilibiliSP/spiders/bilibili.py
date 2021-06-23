@@ -1,9 +1,10 @@
 import scrapy
+from scrapy import cmdline
 
 
 class BilibiliSpider(scrapy.Spider):
-    base_url = "https://www.bilibili.com/video/BV1dK41137mr"
-    up_uid = "7487399"
+    base_url = "https://www.bilibili.com/video/BV1zw411o7mp"
+    up_uid = "669171629"
 
     name = 'bilibili'
     allowed_domains = ['bilibili.com']
@@ -15,7 +16,7 @@ class BilibiliSpider(scrapy.Spider):
 
     def parse(self, response):
         up_url_list = response.xpath("//div[@class='count up']/a/@href").extract()
-        video_url_list = response.xpath("//div[@class='video-page-card']/div/div/a[@class='title']/@href").extract()
+        video_url_list = response.xpath("//div[@class='video-page-card']/div/div/a/@href").extract()
         # print(video_url_list)
 
         if up_url_list:
@@ -27,3 +28,5 @@ class BilibiliSpider(scrapy.Spider):
                         self.allList.append(video_url_list[i])
                         self.file_handle.write(str(video_url_list[i]) + '\n')
                     yield scrapy.Request(video_url_list[i], callback=self.parse)
+if __name__ == '__main__':
+    cmdline.execute("scrapy crawl bilibili".split())
