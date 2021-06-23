@@ -17,7 +17,7 @@ class cover_extraction:
         title = parsel.Selector(title_response).xpath('//*[@id="viewbox_report"]/h1/span/text()').get()
         if visible:
             print("待提取的视频是：" + title+"【"+self.base_url+"】")
-        return title
+        return str.replace(title,"/","-")
 
     def spider(self,download):
         title=self.get_title(False)
