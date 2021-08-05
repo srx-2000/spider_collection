@@ -8,7 +8,7 @@
 
 1.1 一个B站视频爬取spider（Scrapy+you-get）
 
-1.2 一个B站视频封面提取器（requests+json+re+parsel+os）
+1.2 一个B站视频封面提取器（requests+json+re+parsel+os+yaml+Threading）
 
 **2.知乎相关**
 
@@ -38,11 +38,7 @@
 
 欢迎大家在issue中提出一些好玩的爬虫想法，我会根据情况去尝试实现并及时通知的~~才不是因为莫得灵感了~~，同时也欢迎大家提出宝贵的意见。
 
-https://img.shields.io/github/stars/srx-2000/git_spider?style=social
-
 **star**可以持续追更呦
-
-https://img.shields.io/github/forks/srx-2000/git_spider?style=social
 
 **fork**可以一起做有意思的东西呦
 
