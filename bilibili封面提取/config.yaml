@@ -1,0 +1,6 @@
+# 图片保存地址，需要填写绝对路径
+download_path: D:\pycharm\PyCharm 2020.1.1\workplace\taobao\bilibili封面提取\test
+# 多线程下载的线程数，这里建议不要调太高
+# 个人测试20个线程爬取1000个封面已经是极限了，再高就会被封ip【封20分钟左右】，后续如果找到了可靠地ip源再更新ip池
+Thread_num: 20
+
