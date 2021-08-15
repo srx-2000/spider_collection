@@ -1,7 +1,7 @@
 import scrapy
 from scrapy import cmdline
 
-key="teenager"
+key="japanese"
 
 
 search_url="https://www.xvideos.com/?k={key}".format(key=key)

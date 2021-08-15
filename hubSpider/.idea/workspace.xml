@@ -28,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -46,53 +46,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Python3-Spider" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github clone\git_spider\hubSpider\hubSpider\spiders" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.downloader (1)">
-    <configuration name="ThreadPool (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="hubSpider" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hubSpider/spiders" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hubSpider/spiders/ThreadPool.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ThreadPool" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="hubSpider" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hubSpider/spiders" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\github clone\git_spider\hubSpider\hubSpider\spiders\ThreadPool.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="downloader (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="hubSpider" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -107,28 +69,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hubSpider/spiders/downloader.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="downloader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="hubSpider" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hubSpider/spiders" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\github clone\git_spider\hubSpider\hubSpider\spiders\downloader.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,13 +99,79 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="hubSpider" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hubSpider/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hubSpider/spiders/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="hubSpider" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hubSpider/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hubSpider/spiders/test1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testForMongodb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="hubSpider" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hubSpider/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hubSpider/spiders/testForMongodb.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.downloader (1)" />
         <item itemvalue="Python.search_parser (1)" />
-        <item itemvalue="Python.ThreadPool (1)" />
-        <item itemvalue="Python.ThreadPool" />
-        <item itemvalue="Python.downloader" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.testForMongodb" />
+        <item itemvalue="Python.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +186,51 @@
       <option name="presentableId" value="Default" />
       <updated>1609989628419</updated>
       <workItem from="1609989629572" duration="29783000" />
-      <workItem from="1610252644980" duration="31383000" />
+      <workItem from="1610252644980" duration="34377000" />
+      <workItem from="1610336007317" duration="610000" />
+      <workItem from="1610344766095" duration="607000" />
+      <workItem from="1610351484142" duration="610000" />
+      <workItem from="1610376259115" duration="1202000" />
+      <workItem from="1610380574871" duration="599000" />
+      <workItem from="1610415492877" duration="1829000" />
+      <workItem from="1610557149430" duration="607000" />
+      <workItem from="1610561517354" duration="29000" />
+      <workItem from="1610563846627" duration="506000" />
+      <workItem from="1610606904594" duration="2000" />
+      <workItem from="1610714011756" duration="1796000" />
+      <workItem from="1610777068276" duration="980000" />
+      <workItem from="1611050716395" duration="1161000" />
+      <workItem from="1611055203302" duration="9000" />
+      <workItem from="1611242153149" duration="179000" />
+      <workItem from="1611396898974" duration="3373000" />
+      <workItem from="1611654411907" duration="1327000" />
+      <workItem from="1612406524960" duration="24000" />
+      <workItem from="1612406734622" duration="694000" />
+      <workItem from="1613291644328" duration="32000" />
+      <workItem from="1613294290351" duration="5012000" />
+      <workItem from="1614410337173" duration="2441000" />
+      <workItem from="1614532194913" duration="485000" />
+      <workItem from="1614539486068" duration="94000" />
+      <workItem from="1614539662240" duration="805000" />
+      <workItem from="1614705685713" duration="387000" />
+      <workItem from="1614707394196" duration="2242000" />
+      <workItem from="1621327230168" duration="825000" />
+      <workItem from="1621742326601" duration="26000" />
+      <workItem from="1622886396035" duration="2421000" />
+      <workItem from="1622971499503" duration="8882000" />
+      <workItem from="1623986029289" duration="201000" />
+      <workItem from="1623987032154" duration="989000" />
+      <workItem from="1623991980764" duration="1568000" />
+      <workItem from="1624325262239" duration="1221000" />
+      <workItem from="1624365052842" duration="7000" />
+      <workItem from="1625113612425" duration="707000" />
+      <workItem from="1625581759364" duration="456000" />
+      <workItem from="1626065878812" duration="43000" />
+      <workItem from="1626068485633" duration="2730000" />
+      <workItem from="1626233118642" duration="5000" />
+      <workItem from="1627116031630" duration="4036000" />
+      <workItem from="1627120938542" duration="56000" />
+      <workItem from="1628999964241" duration="7275000" />
     </task>
     <servers />
   </component>
@@ -200,63 +250,69 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610289525197">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1629007117292">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1610289525197" />
-    <state width="984" height="466" key="DebuggerActiveHint" timestamp="1610267083109">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1629007117292" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1624326613799">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="984" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1610267083109" />
-    <state width="1493" height="257" key="GridCell.Tab.0.bottom" timestamp="1610296974346">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1624326613799" />
+    <state width="1493" height="99" key="GridCell.Tab.0.bottom" timestamp="1629010493268">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610296974346" />
-    <state width="1493" height="257" key="GridCell.Tab.0.center" timestamp="1610296974346">
+    <state width="1493" height="99" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1629010493268" />
+    <state width="1493" height="99" key="GridCell.Tab.0.center" timestamp="1629010493268">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610296974346" />
-    <state width="1493" height="257" key="GridCell.Tab.0.left" timestamp="1610296974346">
+    <state width="1493" height="99" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1629010493268" />
+    <state width="1493" height="99" key="GridCell.Tab.0.left" timestamp="1629010493268">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610296974346" />
-    <state width="1493" height="257" key="GridCell.Tab.0.right" timestamp="1610296974346">
+    <state width="1493" height="99" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1629010493268" />
+    <state width="1493" height="99" key="GridCell.Tab.0.right" timestamp="1629010493268">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610296974346" />
-    <state width="1493" height="290" key="GridCell.Tab.1.bottom" timestamp="1610296468780">
+    <state width="1493" height="99" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1629010493268" />
+    <state width="1493" height="87" key="GridCell.Tab.1.bottom" timestamp="1629008740272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="290" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610296468780" />
-    <state width="1493" height="290" key="GridCell.Tab.1.center" timestamp="1610296468780">
+    <state width="1493" height="87" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1629008740272" />
+    <state width="1493" height="87" key="GridCell.Tab.1.center" timestamp="1629008740272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="290" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610296468780" />
-    <state width="1493" height="290" key="GridCell.Tab.1.left" timestamp="1610296468780">
+    <state width="1493" height="87" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1629008740272" />
+    <state width="1493" height="87" key="GridCell.Tab.1.left" timestamp="1629008740272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="290" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610296468780" />
-    <state width="1493" height="290" key="GridCell.Tab.1.right" timestamp="1610296468780">
+    <state width="1493" height="87" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1629008740272" />
+    <state width="1493" height="87" key="GridCell.Tab.1.right" timestamp="1629008740272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="290" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610296468780" />
-    <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1610023711558">
+    <state width="1493" height="87" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1629008740272" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1629007219068">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1610023711558" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1610297094414">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1610297094414" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1629007219068" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="response.url" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/hubSpider$xhub.coverage" NAME="xhub Coverage Results" MODIFIED="1610027403608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
     <SUITE FILE_PATH="coverage/hubSpider$hub_spider.coverage" NAME="hub_spider Coverage Results" MODIFIED="1610027592424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
     <SUITE FILE_PATH="coverage/hubSpider$ThreadPool__1_.coverage" NAME="ThreadPool (1) Coverage Results" MODIFIED="1610290063802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
-    <SUITE FILE_PATH="coverage/hubSpider$search_parser__1_.coverage" NAME="search_parser (1) Coverage Results" MODIFIED="1610296468772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
+    <SUITE FILE_PATH="coverage/hubSpider$search_parser__1_.coverage" NAME="search_parser (1) Coverage Results" MODIFIED="1629008985967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
     <SUITE FILE_PATH="coverage/hubSpider$xhubCookies.coverage" NAME="xhubCookies Coverage Results" MODIFIED="1610025473906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
+    <SUITE FILE_PATH="coverage/hubSpider$test.coverage" NAME="test Coverage Results" MODIFIED="1627119353374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
+    <SUITE FILE_PATH="coverage/hubSpider$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1611403160995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
+    <SUITE FILE_PATH="coverage/hubSpider$testForMongodb.coverage" NAME="testForMongodb Coverage Results" MODIFIED="1622980094916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
     <SUITE FILE_PATH="coverage/hubSpider$ThreadingPool.coverage" NAME="ThreadingPool Coverage Results" MODIFIED="1610262639734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
-    <SUITE FILE_PATH="coverage/hubSpider$downloader__1_.coverage" NAME="downloader (1) Coverage Results" MODIFIED="1610296974339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
+    <SUITE FILE_PATH="coverage/hubSpider$downloader__1_.coverage" NAME="downloader (1) Coverage Results" MODIFIED="1629010658616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
     <SUITE FILE_PATH="coverage/hubSpider$testForCookies.coverage" NAME="testForCookies Coverage Results" MODIFIED="1610025951074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
   </component>
 </project>
