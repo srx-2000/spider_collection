@@ -46,15 +46,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Python3-Spider" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../proxy_pool" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\github clone\git_spider\hubSpider\hubSpider\spiders" />
+      <recent name="D:\github clone\git_spider\hubSpider\hubSpider" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\github clone\git_spider\hubSpider\hubSpider\spiders" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.downloader (1)">
+  <component name="RunManager" selected="Python.search_parser (1)">
     <configuration name="downloader (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="hubSpider" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -167,8 +171,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.downloader (1)" />
         <item itemvalue="Python.search_parser (1)" />
+        <item itemvalue="Python.downloader (1)" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.testForMongodb" />
         <item itemvalue="Python.test1" />
@@ -230,7 +234,8 @@
       <workItem from="1626233118642" duration="5000" />
       <workItem from="1627116031630" duration="4036000" />
       <workItem from="1627120938542" duration="56000" />
-      <workItem from="1628999964241" duration="7275000" />
+      <workItem from="1628999964241" duration="8054000" />
+      <workItem from="1629076065504" duration="4451000" />
     </task>
     <servers />
   </component>
@@ -250,46 +255,46 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1629007117292">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1629079902929">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1629007117292" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1624326613799">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1629079902929" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1629077539309">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1624326613799" />
-    <state width="1493" height="99" key="GridCell.Tab.0.bottom" timestamp="1629010493268">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1629077539309" />
+    <state width="1493" height="94" key="GridCell.Tab.0.bottom" timestamp="1629079903352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="99" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1629010493268" />
-    <state width="1493" height="99" key="GridCell.Tab.0.center" timestamp="1629010493268">
+    <state width="1493" height="94" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1629079903352" />
+    <state width="1493" height="94" key="GridCell.Tab.0.center" timestamp="1629079903352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="99" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1629010493268" />
-    <state width="1493" height="99" key="GridCell.Tab.0.left" timestamp="1629010493268">
+    <state width="1493" height="94" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1629079903352" />
+    <state width="1493" height="94" key="GridCell.Tab.0.left" timestamp="1629079903352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="99" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1629010493268" />
-    <state width="1493" height="99" key="GridCell.Tab.0.right" timestamp="1629010493268">
+    <state width="1493" height="94" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1629079903352" />
+    <state width="1493" height="94" key="GridCell.Tab.0.right" timestamp="1629079903352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="99" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1629010493268" />
-    <state width="1493" height="87" key="GridCell.Tab.1.bottom" timestamp="1629008740272">
+    <state width="1493" height="94" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1629079903352" />
+    <state width="1493" height="87" key="GridCell.Tab.1.bottom" timestamp="1629011905726">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="87" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1629008740272" />
-    <state width="1493" height="87" key="GridCell.Tab.1.center" timestamp="1629008740272">
+    <state width="1493" height="87" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1629011905726" />
+    <state width="1493" height="87" key="GridCell.Tab.1.center" timestamp="1629011905726">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="87" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1629008740272" />
-    <state width="1493" height="87" key="GridCell.Tab.1.left" timestamp="1629008740272">
+    <state width="1493" height="87" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1629011905726" />
+    <state width="1493" height="87" key="GridCell.Tab.1.left" timestamp="1629011905726">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="87" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1629008740272" />
-    <state width="1493" height="87" key="GridCell.Tab.1.right" timestamp="1629008740272">
+    <state width="1493" height="87" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1629011905726" />
+    <state width="1493" height="87" key="GridCell.Tab.1.right" timestamp="1629011905726">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="87" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1629008740272" />
+    <state width="1493" height="87" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1629011905726" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1629007219068">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -306,13 +311,13 @@
     <SUITE FILE_PATH="coverage/hubSpider$xhub.coverage" NAME="xhub Coverage Results" MODIFIED="1610027403608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
     <SUITE FILE_PATH="coverage/hubSpider$hub_spider.coverage" NAME="hub_spider Coverage Results" MODIFIED="1610027592424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
     <SUITE FILE_PATH="coverage/hubSpider$ThreadPool__1_.coverage" NAME="ThreadPool (1) Coverage Results" MODIFIED="1610290063802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
-    <SUITE FILE_PATH="coverage/hubSpider$search_parser__1_.coverage" NAME="search_parser (1) Coverage Results" MODIFIED="1629008985967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
+    <SUITE FILE_PATH="coverage/hubSpider$search_parser__1_.coverage" NAME="search_parser (1) Coverage Results" MODIFIED="1629079411192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
     <SUITE FILE_PATH="coverage/hubSpider$xhubCookies.coverage" NAME="xhubCookies Coverage Results" MODIFIED="1610025473906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
     <SUITE FILE_PATH="coverage/hubSpider$test.coverage" NAME="test Coverage Results" MODIFIED="1627119353374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
     <SUITE FILE_PATH="coverage/hubSpider$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1611403160995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
     <SUITE FILE_PATH="coverage/hubSpider$testForMongodb.coverage" NAME="testForMongodb Coverage Results" MODIFIED="1622980094916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
     <SUITE FILE_PATH="coverage/hubSpider$ThreadingPool.coverage" NAME="ThreadingPool Coverage Results" MODIFIED="1610262639734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
-    <SUITE FILE_PATH="coverage/hubSpider$downloader__1_.coverage" NAME="downloader (1) Coverage Results" MODIFIED="1629010658616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
+    <SUITE FILE_PATH="coverage/hubSpider$downloader__1_.coverage" NAME="downloader (1) Coverage Results" MODIFIED="1629079398224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
     <SUITE FILE_PATH="coverage/hubSpider$testForCookies.coverage" NAME="testForCookies Coverage Results" MODIFIED="1610025951074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hubSpider/spiders" />
   </component>
 </project>

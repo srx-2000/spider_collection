@@ -1,5 +1,6 @@
 import scrapy
 from scrapy import cmdline
+import os
 
 key="japanese"
 
@@ -25,7 +26,7 @@ class xhub(scrapy.Spider):
                 url_list.append(search_url+"&p="+str(i))
             yield scrapy.Request(url=search_url+"&p="+str(int(total_page)-1),callback=self.parse)
         else:
-            with open('../video/video_url.txt', mode='w', encoding="utf-8") as f:
+            with open(os.path.dirname(os.getcwd())+'\\video\\video_url.txt', mode='w', encoding="utf-8") as f:
                 for i in url_list:
                     f.write(i + "\n")
             f.close()
