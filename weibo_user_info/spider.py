@@ -7,7 +7,8 @@ import time
 import random
 import os
 
-from ThreadPool import ThreadPool
+from weibo_user_info.ThreadPool import ThreadPool
+from weibo_user_info.Proxy_pool import Proxy_pool
 
 # 获取项目根路径
 dir=os.getcwd()
@@ -90,7 +91,8 @@ class util(object):
         return min
 
 # 爬虫类
-class Spider:
+class Spider():
+    proxy_pool=Proxy_pool()
     user_url = ""
     fans_page_url_list = []
     # 对用户地址，以及粉丝数量初始化
@@ -102,7 +104,7 @@ class Spider:
     def get_fans_id(self):
         fans_id_list=[]
         for i in range(len(self.fans_page_url_list)):
-            response = requests.get(url=self.fans_page_url_list[i], headers=util.get_header())
+            response = self.proxy_pool.get_response(url=self.fans_page_url_list[i], headers=util.get_header())
             json_result = json.loads(response.content)
             print(self.fans_page_url_list[i])
             if i ==0:
@@ -116,7 +118,7 @@ class Spider:
         print(len(fans_id_list))
         print(fans_id_list)
 
-        with open("id.txt",encoding="utf-8",mode="w") as f:
+        with open("id.txt", encoding="utf-8", mode="w") as f:
             for i in fans_id_list:
                 f.write(str(i)+"\n")
         f.close()
@@ -139,7 +141,7 @@ class Spider:
         # for i in range(len(user_home_page_url_list)):
         print(user_home_page_url)
         time.sleep(4)
-        response=requests.get(url=user_home_page_url, headers=util.get_header(), cookies=util.get_cookie())
+        response=self.proxy_pool.get_response(url=user_home_page_url, headers=util.get_header(), cookies=util.get_cookie())
         response_text=response.text
         if response_text.__contains__("用户状态异常，暂时无法访问。"):
             all_fans_num_list.append("用户状态异常，暂时无法访问。")
@@ -186,7 +188,7 @@ class Spider:
         forward_num=0
         base_url="https://weibo.cn/u/"+str(id)
         time.sleep(4)
-        response=requests.get(url=base_url, headers=util.get_header(), cookies=util.get_cookie())
+        response=self.proxy_pool.get_response(url=base_url, headers=util.get_header(), cookies=util.get_cookie())
         response_text=response.text
         single_page_comment=parsel.Selector(response_text).xpath("//div[@class='c']/div[last()]/a[@class='cc']/text()").getall()
         single_page_like=parsel.Selector(response_text).xpath("//div[@class='c']/div/a[last()-3]/text()").getall()
@@ -204,7 +206,7 @@ class Spider:
             for i in page_url_list:
                 print(i)
                 time.sleep(4)
-                response = requests.get(url=i, headers=util.get_header(), cookies=util.get_cookie())
+                response = self.proxy_pool.get_response(url=i, headers=util.get_header(), cookies=util.get_cookie())
                 page_response_text=response.text
                 single_page_comment = parsel.Selector(page_response_text).xpath(
                     "//div[@class='c']/div[last()]/a[@class='cc']/text()").getall()
@@ -243,10 +245,10 @@ class Spider:
         new_info_url="https://weibo.com/p/100505{id}/info".format(id=id)
         old_info_url="https://weibo.cn/{id}/info".format(id=id)
         time.sleep(4)
-        response=requests.get(url=old_info_url, headers=util.get_header(), cookies=util.get_cookie())
+        response=self.proxy_pool.get_response(url=old_info_url, headers=util.get_header(), cookies=util.get_cookie())
         old_info_response_text=response.text
         time.sleep(4)
-        new_info_response_text=requests.get(url=new_info_url,headers=util.get_header(),cookies=util.get_cookie1()).text
+        new_info_response_text=self.proxy_pool.get_response(url=new_info_url,headers=util.get_header(),cookies=util.get_cookie1()).text
 
         member_level=parsel.Selector(old_info_response_text).xpath("//div[@class='c'][2]/text()").get()
         pre = re.compile('\d{4}-\d{2}-\d{2}')
