@@ -16,7 +16,7 @@
 
 **3.微博相关**
 
-3.1 一个微博个人信息爬虫（requests+os+parsel+threading+re+random+time+json+pandas）
+3.1 一个微博个人信息爬虫（requests+os+parsel+threading+re+random+time+json+pandas）——已加入ip代理池
 
 **4.刚需相关**
 
@@ -24,7 +24,7 @@
 
 **5.其他类型**
 
-5.1 一个安居客武汉租房信息爬虫+数据清洗+分析+数据可视化(requests+pandas+parsel+matplotlib)
+5.1 一个安居客武汉租房信息爬虫+数据清洗+分析+数据可视化(requests+pandas+parsel+matplotlib)——已加入ip代理池
 
 5.2 一个有声小说音频爬虫（requests+os+parsel+threading+mongodb+re）
 
