@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib
 import pandas as pd
+import os
 
 # 数据分析以及整理
 
@@ -9,7 +10,7 @@ def read_csv():
     huxing_list=[]
     area_list=[]
     # 这里需要改成您自己的文件的路径，使用绝对路径就可以，并将从csv中读取的数据转化成为一个dataframe对象，这个对象是pandas中用于读取数据的对象
-    df=pd.read_csv("武汉出租房源情况.csv")
+    df=pd.read_csv(os.getcwd()+"//result//武汉出租房源情况.csv")
     # 去重
     df1 = df.drop_duplicates(subset=["房屋描述","房屋地址","房屋详情（户型）以及经纪人"],inplace=False)
     # 使用上一步获取的df对象，根据每一列的列头读取相应的数据，并转成list存储，下面三步一样的操作
