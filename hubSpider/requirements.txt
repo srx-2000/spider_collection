@@ -1,4 +1,4 @@
-Scrapy==2.4.1
+Scrapy==2.5.1
 urllib3==1.24.3
 requests==2.23.0
 parsel==1.6.0
