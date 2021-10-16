@@ -12,7 +12,9 @@
 
 **2.知乎相关**
 
-2.1 一个知乎问答多线程爬虫（requests+json+re+threading）
+2.1 一个知乎问答多线程爬虫（requests+json+re+threading）——已加入ip代理池
+
+2.2 一个知乎用户数据爬虫（requests+json+parsel+yaml+threading+pandas）
 
 **3.微博相关**
 
