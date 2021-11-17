@@ -14,7 +14,7 @@
 
 2.1 一个知乎问答多线程爬虫（requests+json+re+threading）——已加入ip代理池
 
-2.2 一个知乎用户数据爬虫（requests+json+parsel+yaml+threading+pandas）
+2.2 一个知乎用户数据爬虫+数据清洗+数据分析（requests+json+parsel+yaml+threading+pandas）——已加入ip代理池
 
 **3.微博相关**
 
