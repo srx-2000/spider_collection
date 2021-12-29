@@ -1,10 +1,13 @@
 from zhihu_user_info_spider.util.SpiderUtil import SpiderUtil
+from zhihu_user_info_spider.scheduler.BaseScheduler import BaseScheduler
 
 # 爬虫配置工具
 spider_util = SpiderUtil()
 
 
-class ModelRequester(object):
+class ModelRequester(BaseScheduler):
+    def __init__(self):
+        BaseScheduler.__init__(self,name="questionLogger")
 
     def _random_header(self):
         headers = {

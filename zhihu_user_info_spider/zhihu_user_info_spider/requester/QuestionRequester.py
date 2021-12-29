@@ -3,6 +3,7 @@ from zhihu_user_info_spider.util.SaveUtil import SaveUtil
 from zhihu_user_info_spider.util.SpiderUtil import SpiderUtil
 from zhihu_user_info_spider.parser.Parser import Parser
 from zhihu_user_info_spider.requester.ModeRequester import ModelRequester
+from zhihu_user_info_spider.threadpool.ThreadPool import ThreadPool
 import time
 
 """原定的使用用户的粉丝和关注进行传播，后经过尝试发现知乎经过这几年的迭代，
@@ -15,7 +16,10 @@ proxy_pool = Proxy_pool()
 spider_util = SpiderUtil()
 # 保存配置工具
 save_util = SaveUtil()
+
+
 # parser = Parser() //原解析器，现已使用静态方法
+# thread_pool = ThreadPool()
 
 
 class QuestionRequester(ModelRequester):
@@ -23,13 +27,16 @@ class QuestionRequester(ModelRequester):
     __LIMIT = 20
     total_list = []
 
+    def __init__(self):
+        ModelRequester.__init__(self)
+
     # 获取知乎的热门话题，然后进入话题内直接查看回答者的uuid
     def __get_hot_question(self):
         url = "https://www.zhihu.com/hot"
         response_text = proxy_pool.get_response(url=url, headers=ModelRequester._random_cookie(self), retry_count=100)
         return response_text.text
 
-    # 获取知乎热榜并保存的接口，现定为该方法每天自动执行一次，然后每一个月统计一次用户数据，这样每天平均下来大概有3w-10w用户数据，一个月下来就是100w。
+    # 获取知乎热榜并保存的接口，现定为该方法每天自动执行多次，然后每一个月统计一次用户数据，这样每天平均下来大概有3w-10w用户数据，一个月下来就是100w。
     def parse_hot_list_and_save(self):
         response_text = self.__get_hot_question()
         hot_list = Parser.hot_question_list_parser(response_text)
@@ -49,28 +56,34 @@ class QuestionRequester(ModelRequester):
         url_split = question_url.split("&")
         final_url = "{offset}&".join(url_split).format(offset=0)
         now = 0
-        total_num = self.__get_total(final_url)
-        for i in range(0, total_num // self.__LIMIT):
-            now = now + self.__LIMIT
-            next_url = "{offset}&".join(url_split).format(offset=now)
-            json_result = proxy_pool.get_response(next_url, headers=self._random_header()).json()
-            data = json_result["data"]
-            for i in data:
-                if not i['author']['id'] == "0":
-                    user_uuid_list.append(i['author']['id'])
-                # print("***"+i['author']['id']+"***")
-        # self.total_list.append(user_uuid_list)
-        print(user_uuid_list)
-        return user_uuid_list
+        try:
+            total_num = self.__get_total(final_url)
+            for i in range(0, total_num // self.__LIMIT):
+                now = now + self.__LIMIT
+                next_url = "{offset}&".join(url_split).format(offset=now)
+                json_result = proxy_pool.get_response(next_url, headers=self._random_header()).json()
+                data = json_result["data"]
+                for i in data:
+                    if not i['author']['id'] == "0":
+                        user_uuid_list.append(i['author']['id'])
+            print(user_uuid_list)
+            return user_uuid_list
+        except:
+            self.job_logger.warning("问题：" + question_url + "该问题被封了")
+            print("该问题被封了")
 
     # 获取当前问题所有回答数量
     def __get_total(self, question_url: str):
         json_result = proxy_pool.get_response(url=question_url, headers=ModelRequester._random_header(self),
                                               retry_count=100).json()
-        total_num = json_result['paging']['totals']
-        self.sum_num += int(total_num)
-        print(self.sum_num)
-        return total_num
+        try:
+            total_num = json_result['paging']['totals']
+            self.sum_num += int(total_num)
+            print(self.sum_num)
+            return total_num
+        except:
+            # self.job_logger.warning("该问题被封了")
+            print("该问题被封了")
 
     # hot question,user uuid commander
     def get_user_uuid(self):
@@ -79,13 +92,16 @@ class QuestionRequester(ModelRequester):
         for i in range(0, len(hot_list)):
             time.sleep(0.5)
             uuid_list = self.__get_single_question_user_id(hot_list[i])
-            if i == 0:
-                save_util.middle_save(save_util.user_uuid_list_model, uuid_list)
+            if uuid_list != None:
+                if i == 0:
+                    save_util.middle_save(save_util.user_uuid_list_model, uuid_list)
+                else:
+                    save_util.middle_save(save_util.user_uuid_list_model, uuid_list, attach=True)
             else:
-                save_util.middle_save(save_util.user_uuid_list_model, uuid_list, attach=True)
+                pass
 
 
 if __name__ == '__main__':
     question_util = QuestionRequester()
-    question_util.get_user_uuid()
-    # question_util.parse_hot_list_and_save()
+    # question_util.get_user_uuid()
+    question_util.parse_hot_list_and_save()

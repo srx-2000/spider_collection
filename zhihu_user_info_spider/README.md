@@ -27,8 +27,8 @@
 - [ ] ~~对上述数据提供下载【暂时取消】~~
 - [x] 对获取的数据进行数据清洗以及分析
 - [x] 对单个被检索用户进行实时爬取
-- [x] 对爬取的数据进行二元组分析【详见数据分析文件夹下的README】
-- [x] 给出四种排行榜算法，并使用算法对用户进行排序选出前20【详见数据分析文件夹下的README】
+- [x] 对爬取的数据进行二元组分析【详见[数据分析文件夹](https://github.com/srx-2000/spider_collection/tree/master/zhihu_user_info_spider/data_analysis)下的README】
+- [x] 给出四种排行榜算法，并使用算法对用户进行排序选出前20【详见[数据分析文件夹](https://github.com/srx-2000/spider_collection/tree/master/zhihu_user_info_spider/data_analysis)下的README】
 
 #### 使用方法
 
@@ -127,3 +127,15 @@
 * 2021.11.17
 
   更新第二版爬虫【添加了一些配置项】，以及数据分析模块
+  
+* 2021.12.29
+
+  更新第三版爬虫
+
+  ​	**Add**
+
+  1. 添加持续部署模块【schedule模块】，实现在服务器上持续爬取
+
+  ​	**Fix**
+
+  1. 修复代理池无法实现高匿名导致的本机ip暴露问题

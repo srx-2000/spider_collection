@@ -2,6 +2,7 @@ import os
 from zhihu_user_info_spider.util.Utils import Util
 import pandas as pd
 import threading
+from zhihu_user_info_spider.Exception.SpiderException import SpiderException
 
 
 # 保存方法工具类主要作用：读取json文件并按配置文件中所指定的方法进行保存
@@ -60,12 +61,16 @@ class SaveUtil(Util):
         data_list = []
         if file_type == self.HOT_LIST:
             for root, dirs, files in os.walk(self.hot_path):
+                if len(files) == 0:
+                    raise SpiderException("未找到当日的hot_list【热榜问题】文件")
                 for f in files:
                     with open(os.path.join(root, f), mode="r", encoding="utf-8") as f_r:
                         for i in f_r.readlines():
                             data_list.append(i.strip("\n"))
         if file_type == self.USER_ID_LIST:
             for root, dirs, files in os.walk(self.user_path):
+                if len(files) == 0:
+                    raise SpiderException("未找到当日的user_uuid【用户uuid】文件")
                 for f in files:
                     with open(os.path.join(root, f), mode="r", encoding="utf-8") as f_r:
                         for i in f_r.readlines():

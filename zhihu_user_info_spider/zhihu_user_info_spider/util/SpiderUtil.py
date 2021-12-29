@@ -31,7 +31,7 @@ class SpiderUtil(Util):
             cookies_list = self.json_result["cookies"]
             # print("cookie池："+str(cookies_list))
             cookie = random.choice(cookies_list)
-            print("当前使用的cookie是："+str(cookie))
+            print("当前使用的cookie是："+str(cookie)[0:80]+"."*10)
             return cookie
         else:
             print("请在util_content.json中配置至少一个cookies。")

@@ -1,6 +1,7 @@
 from zhihu_user_info_spider.entities.UserEntity import UserEntityList
 import parsel
 import re
+from zhihu_user_info_spider.Exception import SpiderException
 
 user_entity = UserEntityList()
 
@@ -79,6 +80,7 @@ class Parser(object):
                 i = i + 1
             if len(url_list) == 0:
                 print("接收到的hot文档已失效，请及时更换cookie")
+                raise SpiderException("接收到的hot文档已失效，请及时更换cookie")
             else:
                 id_list = []
                 for i in url_list:
@@ -86,6 +88,7 @@ class Parser(object):
                 return id_list
         else:
             print("请输入正确的hot文档")
+            raise SpiderException("请输入正确的hot文档")
 
 
 if __name__ == '__main__':

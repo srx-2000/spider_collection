@@ -1,6 +1,9 @@
 from zhihu_user_info_spider.util.SaveUtil import SaveUtil
-import threading
 from zhihu_user_info_spider.util.SpiderUtil import SpiderUtil
+import threading
+import logging
+import os
+from zhihu_user_info_spider.scheduler.BaseScheduler import BaseScheduler
 
 # 批量爬取用户数据时，将会保存以下信息：
 # id【每个用户的唯一标识】（id）  用户token【可以用来访问用户空间】（url_token）  用户昵称（name）  用户性别（gender）  用户等级（level_info.level）  用户头像url（avatar_url）  用户类型（type）  用户头文字【用户昵称后面跟的那个东西】（headline）
@@ -12,7 +15,16 @@ save_util = SaveUtil()
 spider_util = SpiderUtil()
 
 
-class UserEntityList(object):
+# job_logger = logging.getLogger("UserInfoLog")
+# logging.basicConfig(format="%(asctime)s - %(levelname)s: %(message)s",
+#                     datefmt='%Y-%m-%d %H:%M:%S',
+#                     level=logging.INFO,
+#                     filemode='a',
+#                     filename=os.path.dirname(
+#                         os.getcwd()) + os.sep + "scheduler" + os.sep + "log" + os.sep + "UserInfoLog.log")
+
+
+class UserEntityList(BaseScheduler):
     id_list = []
     user_token_list = []
     user_name_list = []
@@ -45,6 +57,7 @@ class UserEntityList(object):
     times = 0
 
     def __init__(self):
+        BaseScheduler.__init__(self, name="UserInfoLog")
         self.clear_list()
         self.lock = threading.RLock()
         self.user_uuid_sum_num = len(save_util.restore_middle_data(save_util.USER_ID_LIST))
@@ -83,6 +96,7 @@ class UserEntityList(object):
         self.user_location_list.append(user_dict["location"])
         self.user_voteup_count_list.append(user_dict["voteup_count"])
         print("已获取用户：{uuid}的信息".format(uuid=user_dict["id2"]))
+        self.job_logger.info("已获取用户：{uuid}的信息".format(uuid=user_dict["id2"]))
 
     def add_user(self, single_user_info_dict: dict):
         self.lock.acquire()
@@ -94,6 +108,8 @@ class UserEntityList(object):
                     self.df_dict[self.index_list[i]] = list(self.__dict__.values())[i]
                 save_util.save(self.df_dict)
                 print("已进行{times}数据次保存，单次数据保存量为：{size}".format(times=str(self.times), size=str(self.list_size)))
+                self.job_logger.info(
+                    "已进行{times}数据次保存，单次数据保存量为：{size}".format(times=str(self.times), size=str(self.list_size)))
                 self.index = 1
                 self.clear_list()
                 self.__add_user(single_user_info_dict)

@@ -5,6 +5,7 @@ from zhihu_user_info_spider.util.SaveUtil import SaveUtil
 from zhihu_user_info_spider.util.SpiderUtil import SpiderUtil
 from zhihu_user_info_spider.threadpool.ThreadPool import ThreadPool
 from zhihu_user_info_spider.requester.ModeRequester import ModelRequester
+from zhihu_user_info_spider.Exception.SpiderException import SpiderException
 
 # ip池
 proxy_pool = Proxy_pool()
@@ -32,19 +33,24 @@ class UserRequester(ModelRequester):
 
     # single_user commander
     def __get_single_user(self, uuid):
+        # raise Exception("test")
         json_data = self.__get_single_info(uuid)
         self.__parse_single_info(json_data=json_data)
 
     def get_users(self):
         restore_list = save_util.restore_middle_data(save_util.USER_ID_LIST)
         for i in restore_list:
-            thread_pool.run(func=self.__get_single_user, args=(i,))
+            thread_pool.run(func=self.__get_single_user, args=(i,), callback=self.callback_fun)
             # print(i)
             # self.__get_single_user(i)
         self.__close_thread_pool()
 
     def __close_thread_pool(self):
         thread_pool.close()
+
+    def callback_fun(self, status, result):
+        if not status:
+            raise SpiderException(result)
 
 
 if __name__ == '__main__':
