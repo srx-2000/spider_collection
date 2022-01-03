@@ -33,7 +33,8 @@ class QuestionRequester(ModelRequester):
     # 获取知乎的热门话题，然后进入话题内直接查看回答者的uuid
     def __get_hot_question(self):
         url = "https://www.zhihu.com/hot"
-        response_text = proxy_pool.get_response(url=url, headers=ModelRequester._random_cookie(self), retry_count=100)
+        response_text = proxy_pool.get(url=url, headers=ModelRequester._random_cookie(self), retry_count=100,
+                                       anonymity=True)
         return response_text.text
 
     # 获取知乎热榜并保存的接口，现定为该方法每天自动执行多次，然后每一个月统计一次用户数据，这样每天平均下来大概有3w-10w用户数据，一个月下来就是100w。
@@ -61,21 +62,22 @@ class QuestionRequester(ModelRequester):
             for i in range(0, total_num // self.__LIMIT):
                 now = now + self.__LIMIT
                 next_url = "{offset}&".join(url_split).format(offset=now)
-                json_result = proxy_pool.get_response(next_url, headers=self._random_header()).json()
+                json_result = proxy_pool.get(next_url, headers=self._random_header(), anonymity=True).json()
                 data = json_result["data"]
                 for i in data:
                     if not i['author']['id'] == "0":
                         user_uuid_list.append(i['author']['id'])
             print(user_uuid_list)
             return user_uuid_list
-        except:
+        except Exception as e:
+            print(e)
             self.job_logger.warning("问题：" + question_url + "该问题被封了")
             print("该问题被封了")
 
     # 获取当前问题所有回答数量
     def __get_total(self, question_url: str):
-        json_result = proxy_pool.get_response(url=question_url, headers=ModelRequester._random_header(self),
-                                              retry_count=100).json()
+        json_result = proxy_pool.get(url=question_url, headers=ModelRequester._random_header(self), anonymity=True,
+                                     retry_count=100).json()
         try:
             total_num = json_result['paging']['totals']
             self.sum_num += int(total_num)

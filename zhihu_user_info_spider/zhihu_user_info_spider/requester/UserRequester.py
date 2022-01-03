@@ -23,8 +23,8 @@ class UserRequester(ModelRequester):
     # 通过接口获取单个用户的数据
     def __get_single_info(self, uuid):
         url = "https://api.zhihu.com/people/{uuid}".format(uuid=uuid)
-        json_result = proxy_pool.get_response(url=url, headers=self._random_header()).json()
-        # print(json_result)
+        # 如果使用可匿名代理可能爬取速度会下降的比较多，但如果不使用匿名代理，那么极有可能爬到一定数量之后，偶然间暴露本机ip导致本机ip被封
+        json_result = proxy_pool.get(url=url, headers=self._random_header(), anonymity=True).json()
         return json_result
 
     # 解析用户数据并保存
@@ -33,7 +33,7 @@ class UserRequester(ModelRequester):
 
     # single_user commander
     def __get_single_user(self, uuid):
-        # raise Exception("test")
+        # print("用户："+uuid)
         json_data = self.__get_single_info(uuid)
         self.__parse_single_info(json_data=json_data)
 

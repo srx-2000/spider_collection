@@ -95,7 +95,7 @@ class UserEntityList(BaseScheduler):
         self.user_following_favlists_count_list.append(user_dict["following_favlists_count"])
         self.user_location_list.append(user_dict["location"])
         self.user_voteup_count_list.append(user_dict["voteup_count"])
-        print("已获取用户：{uuid}的信息".format(uuid=user_dict["id2"]))
+        # print("已获取用户：{uuid}的信息".format(uuid=user_dict["id2"]))
         self.job_logger.info("已获取用户：{uuid}的信息".format(uuid=user_dict["id2"]))
 
     def add_user(self, single_user_info_dict: dict):
@@ -105,7 +105,7 @@ class UserEntityList(BaseScheduler):
                     self.user_uuid_sum_num < self.list_size and (self.user_uuid_sum_num == self.index)):
                 self.times += 1
                 for i in range(0, len(self.index_list)):
-                    self.df_dict[self.index_list[i]] = list(self.__dict__.values())[i]
+                    self.df_dict[self.index_list[i]] = list(self.__dict__.values())[i + 2]
                 save_util.save(self.df_dict)
                 print("已进行{times}数据次保存，单次数据保存量为：{size}".format(times=str(self.times), size=str(self.list_size)))
                 self.job_logger.info(

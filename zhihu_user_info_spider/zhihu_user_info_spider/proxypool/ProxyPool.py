@@ -44,12 +44,16 @@ class Proxy_pool(object):
                     # json = self.__get_proxy()
                     proxy = self.__get_proxy().get("proxy")
                     proxies = {"http": "http://{ip}".format(ip=proxy)}
-                proxy_ip = str(requests.get(url=test_url, headers=headers, proxies=proxies).json()["origin"])
-                print("origin代理是：" + proxy_ip)
-                if not proxy_ip.__contains__(origin_ip):
-                    return proxies, proxy
+                ip_json = requests.get(url=test_url, headers=headers, proxies=proxies, timeout=5)
+                if ip_json.status_code != 404:
+                    proxy_ip = ip_json.json()["origin"]
+                    if not proxy_ip.__contains__(origin_ip):
+                        # print("获取可匿代理：:" + str(proxy_ip))
+                        return proxies, proxy
         except Exception as e:
-            print("匿名代理筛选出错：" + e)
+            # print("匿名代理筛选出错：")
+            # print(e)
+            pass
 
     # 筛选https代理
     def __is_https(self):
@@ -59,7 +63,7 @@ class Proxy_pool(object):
             # print(json)
             if is_https:
                 proxy = json.get("proxy")
-                proxies = {"https": "https://{}".format(proxy)}
+                proxies = {"https": "https://{ip}".format(ip=proxy)}
                 # print(proxy)
                 return proxies, proxy
 
@@ -92,7 +96,7 @@ class Proxy_pool(object):
                     proxies = anonymity_proxy[0]
                 else:
                     proxy = self.__get_proxy().get("proxy")
-                    proxies = {"http": "http://{}".format(ip=proxy)}
+                    proxies = {"http": "http://{ip}".format(ip=proxy)}
                 if is_get:
                     response = requests.get(url=url, headers=headers, cookies=cookies, timeout=timeout, proxies=proxies)
                 else:
@@ -101,9 +105,9 @@ class Proxy_pool(object):
                 # 使用代理访问
                 return response
             except Exception as e:
-                print(e)
+                # print(e)
                 retry_count -= 1
-                print("代理{ip}连接失败，更换代理".format(ip=proxy))
+                # print("代理{ip}连接失败，更换代理".format(ip=proxy))
         if response is None:
             # 删除代理池中代理
             self.__delete_proxy(proxy)

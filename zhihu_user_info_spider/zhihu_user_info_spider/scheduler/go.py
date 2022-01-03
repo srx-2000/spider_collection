@@ -25,6 +25,7 @@ def start_get_info():
     user_sche.get_user_info()
 
 
+
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         print("请输入参数【hot、uuid、info】")

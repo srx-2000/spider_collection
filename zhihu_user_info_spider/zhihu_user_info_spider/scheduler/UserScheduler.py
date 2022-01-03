@@ -13,7 +13,7 @@ class UserScheduler(BaseScheduler):
     def __init__(self):
         BaseScheduler.__init__(self, name="userLogger")
 
-    # 每天11点30分爬取用户详细信息
+    # 每天11点59分爬取用户详细信息
     def get_user_info(self):
         print("已开启爬取用户相信信息时刻表，每晚11点59分开始爬取")
         self.sche.add_job(user_requester.get_users, "cron", day_of_week="mon-sun", hour=23, minute=59)

@@ -39,10 +39,6 @@
   ],
   "cookies": [
   ],
-  "account": [
-    {
-    }
-  ],
-  "batch_size": 1000,
+  "batch_size": 10,
   "thread_num": 20
 }

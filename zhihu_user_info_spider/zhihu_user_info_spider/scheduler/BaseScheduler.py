@@ -12,7 +12,7 @@ class BaseScheduler(object):
         self.sche.add_listener(self.job_listener, EVENT_JOB_ERROR | EVENT_JOB_MISSED | EVENT_JOB_EXECUTED)
         self.sche._logger = logging
         self.job_logger = logging.getLogger(name=name)
-        file_handler = logging.FileHandler(filename=os.getcwd() + os.sep + "log" + os.sep + name + ".log", mode="a",
+        file_handler = logging.FileHandler(filename=os.path.abspath(os.path.dirname(__file__)) + os.sep + "log" + os.sep + name + ".log", mode="a",
                                            encoding="utf-8")
         file_handler.setFormatter(
             logging.Formatter(fmt="%(asctime)s - %(levelname)s: %(message)s", datefmt='%Y-%m-%d %H:%M:%S'))

@@ -16,6 +16,8 @@ from zhihu_user_info_spider.requester.QuestionRequester import QuestionRequester
 question_requester = QuestionRequester()
 user_requester = UserRequester()
 
+"""该类基本被弃用了，如果想要单独测试每个模块的运行建议进入目录：./requester
+并先后运行 QuestionRequester 和 UserRequester 【具体使用方法见README.md】"""
 
 class Spider(object):
 
