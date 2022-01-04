@@ -44,7 +44,7 @@
 
 * **配置文件【如果未配置下列文件，则爬虫无法运行】**
 
-	1. 打开`util/util_content.json`文件，配置以下是五个配置项，
+  1. 打开`util/util_content.json`文件，配置以下是五个配置项，
 
      | save_method    | 用于规定保存方式，现仅有csv保存方式                          |
      | -------------- | ------------------------------------------------------------ |
@@ -52,11 +52,11 @@
      | **account**    | **用来标识上述cookie的，防止建立cookie池时搞混cookie，不填也无所谓，不会影响运行** |
      | **batch_size** | **用来规定爬取多少条数据向csv中保存一次的**                  |
      | **thread_num** | **线程数，一般开20左右就够用了，我这里自己测的时候，20个线程2分钟就能爬到1w的数据了** |
-  
+
    ```json
    {
      "save_method": "csv",
-	   "cookies": [
+     "cookies": [
          
      ],
      "account": [
@@ -67,9 +67,9 @@
      "thread_num": 20
    }
    ```
-  
+
   2. 打开`zhihu_user_info\proxypool\config.yaml`配置ip池的host和端口 ，其中ip池的具体使用方式[详见](https://github.com/srx-2000/git_spider/tree/master/proxy_pool)
-  
+
    ```yaml
    # https://github.com/jhao104/proxy_pool
    # 上述项目是本项目使用的代理池，原项目超级棒，而且在使用教学上也可以说是相当详细。
@@ -80,9 +80,12 @@
    host: 127.0.0.1
    # 代理池接口端口，这里使用的是项目的默认端口
    port: 5010
+   # 是否启用ip代理池，如果置为False，那么将会使用原生的requests，而非封装后的ip代理池【即不用clone相关代理池项目了】
+   is_proxy: False
    ```
 
 * **运行爬虫（IP池需要启动详见上面链接）**
+  
   1. 打开爬虫项目运行spider.py文件，点击运行即可。
   2. 因为本模块分为两个子模块分别在QuestionRequester.py和UserRequester.py中。其中QuestionRequester模块主要作用是获取热榜问题，并将热榜上的人的uuid获取到。而UserRequester模块主要作用是通过刚刚爬取的uuid去用户的个人信息出获取真正的个人详细信息。**所以这里可以将两个模块分开运行，优先使用QuestionRequester模块，然后运行UserRequester模块即可**。
   3. 有了上面模块的支持，这里就可以在本项目的基础上添加一个时间表模块，每隔3-4个小时运行QuestionRequester模块去知乎上爬取一波热榜问题的uuid，然后以天为单位到晚上12点再运行UserRequester模块爬取用户的详细信息。
@@ -173,5 +176,15 @@
 
   1. 修复了因添加持续部署模块而无法使用Requester模块直接运行的bug
   2. 修复了在获取到的csv数据中存在的apschedule相关数据列而导致数据出错的bug
+
+* 2022.1.4
+
+  更新第四版爬虫
+
+  **Add**
+
+  1. 新增不使用代理爬取【使用requests原生请求】，ip代理池不再是必须配置
+
+  
 
   
