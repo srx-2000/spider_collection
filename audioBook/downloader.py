@@ -4,92 +4,73 @@ import requests
 import parsel
 import re
 import os
-
+import json
 from ThreadPool import ThreadPool
 
 
 class Downloader(object):
 
-    base_url="https://www.ishuyin.com/"
+    base_url="https://www.ishuyin.com"
+    php_url="https://www.ishuyin.com/e/extend/url.php?code="
 
-    def __init__(self, id):
-        self.search_url="https://www.ishuyin.com/show-{id}.html".format(id=id)
-        self.mp3_url_list=[]
-        self.chapter_list=[]
+    def __init__(self, cl,id):
+        self.search_url="https://www.ishuyin.com/{cl}/{id}/0.html".format(cl=cl,id=id)
         self.book_name=""
         self.base_path=""
         self.count=0
-        self.dict={}
+        self.chapters = []
 
     def init(self):
         response = requests.get(url=self.search_url).text
-        self.chapter_list = parsel.Selector(response).xpath("//div[@class='box' and position()<3]/a/@href").getall()
+        for chapter in parsel.Selector(response).xpath("//div[@class='bd cl']/section/ul/li/a").extract():
+            self.chapters.append( {
+            'name':parsel.Selector(chapter).xpath("//a/text()").getall()[0],
+            'link':parsel.Selector(chapter).xpath("//a/@href").getall()[0],
+            'audio_url':'' }
+            )
+        #print(self.chapters)
         self.book_name = parsel.Selector(response).xpath("//h1/text()").get()
         self.base_path = os.getcwd() + "\\mp3\\" + self.book_name + "\\"
         if not os.path.exists(self.base_path):
             os.makedirs(self.base_path)
 
-    def parse(self,i,count):
-        response_text=requests.get(self.base_url+i).text
-        unicode=re.search(r'(\*\d+)*\*',response_text).group()
-        unicode_list=unicode.split("*")
-        mp3_url=""
-        for j in range(1, len(unicode_list)-1):
-            mp3_url+=chr(int(unicode_list[j]))
-        print("已成功解析："+mp3_url)
-        self.dict[count]=mp3_url
-        if count == (len(self.chapter_list)-1):
-            return True
-        else:
-            return False
-
-    def download(self,i,count):
-        print("开始下载:"+self.book_name+"第"+str(count+1)+"章")
-        content=requests.get(url=i)
-        with open(self.base_path+"\\"+str(count+1)+".mp3",mode="wb") as f:
+    def parse(self,chapter):
+        response_text=requests.get(self.base_url+chapter['link']).text
+        data_code = parsel.Selector(response_text).xpath("//div[@class='jp-playlist']/ul/li/@data-code").getall()
+        #print(data_code)
+        if len(data_code) == 0:
+            return
+        headers= {
+            'referer':self.base_url+chapter['link'],
+            'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36',
+            'accept':'application/json, text/javascript, */*; q=0.01',
+            'x-requested-with': 'XMLHttpRequest',
+        }
+        response_text=requests.get(self.php_url+data_code[0],headers=headers).text
+        audio_link = json.loads(response_text)['url']
+        #print(audio_link)
+        chapter['audio_url'] = audio_link
+        #print(self.chapters[count])
+        print("开始下载:"+ chapter['name'])
+        content=requests.get(url=chapter['audio_url'])
+        with open(self.base_path+"\\"+ chapter['name']+".mp3",mode="wb") as f:
             f.write(content.content)
-            print(self.book_name+"第"+str(count+1)+"章保存成功！")
+            print(chapter['name']+ " 保存成功！")
         f.close()
 
-
-    def parse_all(self):
-        if len(self.chapter_list) != 0:
-            pool = ThreadPool(100)
-            print("开始解析并下载有声书："+self.book_name)
-            for i in range(0,len(self.chapter_list)):
-                # print(self.chapter_list[i])
-                pool.run(func=self.parse,args=(self.chapter_list[i],i,),callback=self.callback)
+    def download_batch(self):
+        total = len(self.chapters)
+        if  total!= 0:
+            pool = ThreadPool(50)
+            print(f"开始解析并下载有声书：{total}"+self.book_name)
+            for i in range(0,total):
+                pool.run(func=self.parse,args=(self.chapters[i],))
             pool.close()
-
         else:
             print("下载器未数初始化")
 
-    def callback(self,status,pool,num,result):
-        self.count+=1
-        if self.count== len(self.chapter_list):
-            for i in sorted(self.dict):
-                self.mp3_url_list.append(self.dict[i])
-            with open(self.base_path + "\\" + "mp3_url.txt", mode="w") as f:
-                for i in self.mp3_url_list:
-                    f.write(i + "\n")
-                f.close()
-
-    def download_batch(self):
-        if not os.path.exists(self.base_path+"\\"+"mp3_url.txt"):
-            self.parse_all()
-        else:
-            with open(self.base_path+"\\"+"mp3_url.txt",mode="r") as f:
-                for line in f:
-                    self.mp3_url_list.append(line.strip('\n'))
-        pool = ThreadPool(50)
-        for i in self.mp3_url_list:
-            pool.run(func=self.download,args=(i,self.mp3_url_list.index(i)))
-        pool.close()
-
 if __name__ == '__main__':
-    book=Downloader(23736)
+    #book=Downloader(38,22977)  #https://www.ishuyin.com/38/22977/0.html
+    book=Downloader(38,15626)  #https://www.ishuyin.com/album-38-15626.html
     book.init()
     book.download_batch()
-
-
-
