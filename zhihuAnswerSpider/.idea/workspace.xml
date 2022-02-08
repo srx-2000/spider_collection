@@ -45,14 +45,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/spider" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\github clone\git_spider\zhihuAnswerSpider\spider" />
       <recent name="D:\github clone\git_spider\zhihuAnswerSpider" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\github clone\git_spider\zhihuAnswerSpider\spider" />
       <recent name="D:\github clone\git_spider\zhihuAnswerSpider" />
     </key>
   </component>
@@ -118,7 +119,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1631182257970</updated>
-      <workItem from="1631182259263" duration="3785000" />
+      <workItem from="1631182259263" duration="4322000" />
+      <workItem from="1631774058722" duration="363000" />
+      <workItem from="1631872274864" duration="6000" />
+      <workItem from="1632231717786" duration="2390000" />
+      <workItem from="1632390263349" duration="1048000" />
+      <workItem from="1632638772612" duration="599000" />
+      <workItem from="1632793986689" duration="611000" />
+      <workItem from="1632840847083" duration="952000" />
+      <workItem from="1632980573937" duration="740000" />
+      <workItem from="1633317078516" duration="617000" />
+      <workItem from="1633431566563" duration="18000" />
+      <workItem from="1633431623583" duration="3170000" />
+      <workItem from="1634002602024" duration="2062000" />
+      <workItem from="1634133436890" duration="616000" />
+      <workItem from="1634303125269" duration="2548000" />
+      <workItem from="1634349184886" duration="37000" />
+      <workItem from="1643460617894" duration="620000" />
+      <workItem from="1644308980567" duration="3870000" />
     </task>
     <servers />
   </component>
@@ -135,27 +153,32 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="299" key="GridCell.Tab.0.bottom" timestamp="1631185182618">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1644313425282">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1631185182618" />
-    <state width="1493" height="299" key="GridCell.Tab.0.center" timestamp="1631185182617">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1644313425282" />
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1644315636385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1631185182617" />
-    <state width="1493" height="299" key="GridCell.Tab.0.left" timestamp="1631185182617">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1644315636385" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1644315636385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1631185182617" />
-    <state width="1493" height="299" key="GridCell.Tab.0.right" timestamp="1631185182618">
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1644315636385" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1644315636385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1631185182618" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1644315636385" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1644315636385">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1644315636385" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/zhihuAnswerSpider$zhihu_answer__1_.coverage" NAME="zhihu_answer (1) Coverage Results" MODIFIED="1631185182609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider" />
+    <SUITE FILE_PATH="coverage/zhihuAnswerSpider$zhihu_answer__1_.coverage" NAME="zhihu_answer (1) Coverage Results" MODIFIED="1644316008558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider" />
     <SUITE FILE_PATH="coverage/zhihuAnswerSpider$zhihu_answer.coverage" NAME="zhihu_answer Coverage Results" MODIFIED="1631184696873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
