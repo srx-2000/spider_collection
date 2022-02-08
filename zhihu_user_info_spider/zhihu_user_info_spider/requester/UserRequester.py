@@ -24,7 +24,7 @@ class UserRequester(ModelRequester):
     def __get_single_info(self, uuid):
         url = "https://api.zhihu.com/people/{uuid}".format(uuid=uuid)
         # 如果使用可匿名代理可能爬取速度会下降的比较多，但如果不使用匿名代理，那么极有可能爬到一定数量之后，偶然间暴露本机ip导致本机ip被封
-        json_result = proxy_pool.get(url=url, headers=self._random_header(), anonymity=True).json()
+        json_result = proxy_pool.get(url=url, headers=ModelRequester._random_cookie(self), anonymity=False).json()
         return json_result
 
     # 解析用户数据并保存

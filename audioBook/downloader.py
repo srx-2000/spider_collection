@@ -74,3 +74,4 @@ if __name__ == '__main__':
     book=Downloader(38,15626)  #https://www.ishuyin.com/album-38-15626.html
     book.init()
     book.download_batch()
+

@@ -30,6 +30,10 @@
 - [x] 对爬取的数据进行二元组分析【详见[数据分析文件夹](https://github.com/srx-2000/spider_collection/tree/master/zhihu_user_info_spider/data_analysis)下的README】
 - [x] 给出四种排行榜算法，并使用算法对用户进行排序选出前20【详见[数据分析文件夹](https://github.com/srx-2000/spider_collection/tree/master/zhihu_user_info_spider/data_analysis)下的README】
 
+#### 特别提示
+
+​	如果在使用中觉得爬取速度过慢，可以将`zhihu_user_info_spider\proxypool\config.yaml`中的is_proxy属性改为False，此时使用的是requests原生请求，速度会大幅提升，但同时也有IP被封的风险，所以仅建议在自己小数据量爬着玩的时候使用。
+
 #### 使用方法
 
 ###### **使用pycharm编译器【推荐】**
@@ -86,9 +90,8 @@
 
 * **运行爬虫（IP池需要启动详见上面链接）**
   
-  1. 打开爬虫项目运行spider.py文件，点击运行即可。
-  2. 因为本模块分为两个子模块分别在QuestionRequester.py和UserRequester.py中。其中QuestionRequester模块主要作用是获取热榜问题，并将热榜上的人的uuid获取到。而UserRequester模块主要作用是通过刚刚爬取的uuid去用户的个人信息出获取真正的个人详细信息。**所以这里可以将两个模块分开运行，优先使用QuestionRequester模块，然后运行UserRequester模块即可**。
-  3. 有了上面模块的支持，这里就可以在本项目的基础上添加一个时间表模块，每隔3-4个小时运行QuestionRequester模块去知乎上爬取一波热榜问题的uuid，然后以天为单位到晚上12点再运行UserRequester模块爬取用户的详细信息。
+  1. 因为本模块分为两个子模块分别在QuestionRequester.py和UserRequester.py中。其中QuestionRequester模块主要作用是获取热榜问题，并将热榜上的人的uuid获取到。而UserRequester模块主要作用是通过刚刚爬取的uuid去用户的个人信息出获取真正的个人详细信息。**所以这里可以将两个模块分开运行，优先使用QuestionRequester模块，然后运行UserRequester模块即可**。
+  2. 有了上面模块的支持，这里就可以在本项目的基础上添加一个时间表模块，每隔3-4个小时运行QuestionRequester模块去知乎上爬取一波热榜问题的uuid，然后以天为单位到晚上12点再运行UserRequester模块爬取用户的详细信息。
 
 ###### **无pycharm编译器**
 
@@ -128,7 +131,7 @@
 
 1. **用户id获取**
 
-   ![](https://raw.githubusercontent.com/srx-2000/git_spider/master/zhihu_user_info_spider/1.png)
+   ![](https://raw.githubusercontent.com/srx-2000/git_spider/master/zhihu_user_info_spider/7.png)
 
 2. **用户信息获取**
 
@@ -185,6 +188,20 @@
 
   1. 新增不使用代理爬取【使用requests原生请求】，ip代理池不再是必须配置
 
-  
+* 2022.2.8
+
+  更新第五版爬虫
+
+  **Add**
+
+  1. 优化爬取ui，动态获取每个问答的爬取进度
+  2. 从问答中获取用户uid的请求器添加多线程，大幅提高单个问答的爬取速度
+
+  **Fix**
+
+  1. 修复【schedule模块】日期路径以及文件，日期不更新问题
+  2. 知乎接口更新后适配新的接口【头参数93,96,热榜动态渲染】
+
+  > 更新后的爬虫甚至不需要登录即可爬取数据，但仍需要使用者从自己的浏览器中获取cookie【不登录的情况下获取的cookie是不带有账号信息的，所以理论上可以单cookie开爬，不用建立cookie池】
 
   

@@ -1,0 +1,54 @@
+{
+  "name": "data-urls",
+  "description": "Parses data: URLs",
+  "keywords": [
+    "data url",
+    "data uri",
+    "data:",
+    "http",
+    "fetch",
+    "whatwg"
+  ],
+  "version": "3.0.1",
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "license": "MIT",
+  "repository": "jsdom/data-urls",
+  "main": "lib/parser.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "lint": "eslint .",
+    "pretest": "node scripts/get-latest-platform-tests.js"
+  },
+  "dependencies": {
+    "abab": "^2.0.3",
+    "whatwg-mimetype": "^3.0.0",
+    "whatwg-url": "^10.0.0"
+  },
+  "devDependencies": {
+    "@domenic/eslint-config": "^1.4.0",
+    "eslint": "^7.32.0",
+    "jest": "^27.2.4",
+    "minipass-fetch": "^1.4.1"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "jest": {
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "lcov",
+      "text-summary"
+    ],
+    "testEnvironment": "node",
+    "testMatch": [
+      "<rootDir>/test/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/(?!(abab/lib/atob.js))"
+    ]
+  }
+}

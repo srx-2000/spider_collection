@@ -17,14 +17,23 @@ class SaveUtil(Util):
     def __init__(self):
         super().__init__()
         self.path = os.path.dirname(os.path.dirname(self.abs_path)) + os.sep + "result" + os.sep
+        self.update_date()
         self.hot_path = self.path + "hotList" + os.sep + self.year + os.sep + self.month + os.sep + self.day + os.sep
         self.user_path = self.path + "userUUID" + os.sep + self.year + os.sep + self.month + os.sep + self.day + os.sep
         self.final_path = self.path + "userInfo" + os.sep + self.year + os.sep + self.month + os.sep + self.day + os.sep
         self.lock = threading.RLock()
 
+    # 用来更新路径
+    def get_paths(self):
+        self.update_date()
+        self.hot_path = self.path + "hotList" + os.sep + self.year + os.sep + self.month + os.sep + self.day + os.sep
+        self.user_path = self.path + "userUUID" + os.sep + self.year + os.sep + self.month + os.sep + self.day + os.sep
+        self.final_path = self.path + "userInfo" + os.sep + self.year + os.sep + self.month + os.sep + self.day + os.sep
+
     # 用来保存中间产物
     def middle_save(self, model: int, data: list, attach=False):
         file_name = ""
+        self.get_paths()
         if model == self.question_list_model:
             flag = os.path.exists(self.hot_path)
             if not flag:
@@ -34,12 +43,6 @@ class SaveUtil(Util):
             for i in data:
                 f_w.write(str(i) + "\n")
             f_w.close()
-        # elif model == self.answer_list_model:
-        #     file_name = "answer_list-" + self.year + "-" + self.month + "-" + self.day + ".txt"
-        #     f_w = open(self.path + file_name, mode="w", encoding="utf-8")
-        #     for i in data:
-        #         f_w.write(str(i) + "\n")
-        #     f_w.close()
         elif model == self.user_uuid_list_model:
             flag = os.path.exists(self.user_path)
             if not flag:
@@ -59,6 +62,7 @@ class SaveUtil(Util):
     # 该方法如果是hotlist调用，那么应该每天晚上十二点之前调用一次，以免出现路劲错误
     def restore_middle_data(self, file_type: int):
         data_list = []
+        self.get_paths()
         if file_type == self.HOT_LIST:
             for root, dirs, files in os.walk(self.hot_path):
                 if len(files) == 0:
@@ -78,6 +82,7 @@ class SaveUtil(Util):
         return data_list
 
     def save(self, data_dict, is_month=False):
+        self.get_paths()
         path_flag = os.path.exists(self.final_path)
         if not path_flag:
             os.makedirs(self.final_path)
@@ -92,6 +97,7 @@ class SaveUtil(Util):
 
     # 使用csv保存
     def __save_by_csv(self, data_dict, is_month=False):
+        self.get_paths()
         df = pd.DataFrame(data_dict)
         if is_month:
             file_name = self.final_path + "user_info-" + self.year + "-" + self.month + ".csv"

@@ -2,8 +2,14 @@ from zhihu_user_info_spider.entities.UserEntity import UserEntityList
 import parsel
 import re
 from zhihu_user_info_spider.Exception import SpiderException
+from zhihu_user_info_spider.util.SpiderUtil import SpiderUtil
+import hashlib
+import execjs
+import os
 
 user_entity = UserEntityList()
+
+spider_util = SpiderUtil()
 
 
 class Parser(object):
@@ -67,8 +73,10 @@ class Parser(object):
         else:
             return single_user_info_dict
 
+    # 该方法已弃用，原因：
+    # 下面这个v1方法已经被知乎给ban了，现在知乎热榜已更新为动态加载了，所以直接用parsel去解析热榜已经不可行了，所以有了v2版本的解析方法
     @staticmethod
-    def hot_question_list_parser(response_text: str):
+    def hot_question_list_parser_v1(response_text: str):
         if response_text != None and response_text != "":
             url_list = parsel.Selector(response_text).xpath("//div[@class='HotItem-content']/a/@href").getall()
             i = 0
@@ -90,6 +98,55 @@ class Parser(object):
             print("请输入正确的hot文档")
             raise SpiderException("请输入正确的hot文档")
 
+    # 下面这个v1方法已经被知乎给ban了，现在知乎热榜已更新为动态加载了，所以直接用parsel去解析热榜已经不可行了，所以有了v2版本的解析方法
+    @staticmethod
+    def hot_question_list_parser_v2(response_json: dict):
+        if response_json:
+            id_list = []
+            data_list = response_json["data"]
+            for data in data_list:
+                card_object = data["target"]
+                if card_object["type"] == "question":
+                    id_list.append(card_object["id"])
+            return id_list
+        else:
+            print("传入的热榜json有误")
+            raise SpiderException("传入的热榜json有误")
+
+    # 获取x-zse-96参数信息
+    @staticmethod
+    def get_x_zse_96(api_url: str):
+        star = 'd_c0='
+        end = ';'
+        cookie = spider_util.get_cookie()
+        cookie_mes = cookie[cookie.index(star):].replace(star, '')
+        cookie_mes = cookie_mes[:cookie_mes.index(end)]
+        parse_url = api_url.replace("https://www.zhihu.com", "")
+        f = "+".join(["101_3_2.0", parse_url, cookie_mes])
+        fmd5 = hashlib.new('md5', f.encode()).hexdigest()
+        with open(os.path.dirname(os.path.dirname(__file__)) + os.sep + "parser" + os.sep + 'g_encrypt.js', 'r',
+                  encoding="utf-8") as f:
+            ctx1 = execjs.compile(f.read(), cwd=os.path.dirname(os.path.dirname(os.getcwd())) + os.sep + 'node_modules')
+        encrypt_str = "2.0_%s" % ctx1.call('b', fmd5)
+        return encrypt_str
+
+    # 获取x-zst-81参数信息，暂时没能破解成功，且可以通过别的途径绕过，所以本方法暂时无用
+    @staticmethod
+    def get_x_zst_81(api_url: str):
+        pass
+        star = 'd_c0='
+        end = ';'
+        cookie = spider_util.get_cookie()
+        cookie_mes = cookie[cookie.index(star):].replace(star, '')
+        cookie_mes = cookie_mes[:cookie_mes.index(end)]
+        parse_url = api_url.replace("https://www.zhihu.com", "")
+        f = "+".join(["101_3_2.0", parse_url, cookie_mes])
+        fmd5 = hashlib.new('md5', f.encode()).hexdigest()
+        with open(os.getcwd() + os.sep + 'g_encrypt.js', 'r', encoding="utf-8") as f:
+            ctx1 = execjs.compile(f.read(), cwd=os.path.dirname(os.path.dirname(os.getcwd())) + os.sep + 'node_modules')
+        encrypt_str = "2.0_%s" % ctx1.call('b', fmd5)
+        return encrypt_str
+
 
 if __name__ == '__main__':
-    print()
+    pass

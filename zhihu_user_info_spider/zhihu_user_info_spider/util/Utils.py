@@ -14,3 +14,8 @@ class Util(object):
         self.year = time.strftime("%Y", time.localtime())
         self.month = time.strftime("%m", time.localtime())
         self.day = time.strftime("%d", time.localtime())
+
+    def update_date(self):
+        self.year = time.strftime("%Y", time.localtime())
+        self.month = time.strftime("%m", time.localtime())
+        self.day = time.strftime("%d", time.localtime())

@@ -1,6 +1,7 @@
 import requests
 import yaml
 import os
+import traceback
 
 abs_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -13,15 +14,16 @@ class Proxy_pool(object):
     # 默认本机ip，端口是上述项目的默认端口。
     host = "127.0.0.1"
     port = "5010"
+    is_proxy = True
 
     # 初始化用过yaml文件读取配置
     def __init__(self):
         config = open(abs_path + os.sep + "config.yaml", mode="r", encoding="utf-8")
-        # config = open(os.getcwd() + "\\config.yaml", mode="r", encoding="utf-8")
         cfg = config.read()
         yaml_line = yaml.load(stream=cfg, Loader=yaml.FullLoader)
         self.host = yaml_line["host"]
         self.port = yaml_line["port"]
+        self.is_proxy = bool(yaml_line["is_proxy"])
 
     # 调用get接口，获取一个代理
     def __get_proxy(self):
@@ -32,10 +34,10 @@ class Proxy_pool(object):
         requests.get("http://{host}:{port}/delete/?proxy={proxy}".format(host=self.host, port=self.port, proxy=proxy))
 
     def __is_anonymity(self, headers, is_https=False):
-        try:
-            test_url = "http://httpbin.org/ip"
-            origin_ip = requests.get(url=test_url, headers=headers).json()["origin"]
-            while True:
+        test_url = "http://httpbin.org/ip"
+        origin_ip = requests.get(url=test_url, headers=headers).json()["origin"]
+        while True:
+            try:
                 if is_https:
                     https_proxy = self.__is_https()
                     proxy = https_proxy[1]
@@ -50,10 +52,11 @@ class Proxy_pool(object):
                     if not proxy_ip.__contains__(origin_ip):
                         # print("获取可匿代理：:" + str(proxy_ip))
                         return proxies, proxy
-        except Exception as e:
-            # print("匿名代理筛选出错：")
-            # print(e)
-            pass
+            except Exception as e:
+                # print("匿名代理筛选出错：")
+                # print("__is_anonymity")
+                # print(e)
+                pass
 
     # 筛选https代理
     def __is_https(self):
@@ -70,14 +73,20 @@ class Proxy_pool(object):
     # 非必要不要使用https代理，因为需要进一步的筛选同时还有可能出现：代理池中并未有https代理导致程序崩溃或卡死
     # 基本别把https和匿名代理的开关同时打开，这样可能筛到最后啥也没有了
     def get(self, url, headers, https=False, anonymity=False, timeout=10, cookies="", retry_count=5):
-        return self.__wrapping_request(is_get=True, url=url, headers=headers, https=https, anonymity=anonymity,
-                                       timeout=timeout, cookies=cookies, retry_count=retry_count)
+        if self.is_proxy:
+            return self.__wrapping_request(is_get=True, url=url, headers=headers, https=https, anonymity=anonymity,
+                                           timeout=timeout, cookies=cookies, retry_count=retry_count)
+        else:
+            return requests.get(url=url, headers=headers, timeout=timeout, cookies=cookies)
 
     # https代理与get同理
     def post(self, url, headers, https=False, anonymity=False, timeout=10, data={}, cookies="", retry_count=5):
-        return self.__wrapping_request(is_get=False, url=url, headers=headers, data=data, https=https,
-                                       anonymity=anonymity,
-                                       timeout=timeout, cookies=cookies, retry_count=retry_count)
+        if self.is_proxy:
+            return self.__wrapping_request(is_get=False, url=url, headers=headers, data=data, https=https,
+                                           anonymity=anonymity,
+                                           timeout=timeout, cookies=cookies, retry_count=retry_count)
+        else:
+            return requests.post(url=url, headers=headers, cookies=cookies, timeout=timeout, data=data)
 
     # requests封装
     def __wrapping_request(self, is_get, url, headers, https=False, anonymity=False, timeout=10, data={}, cookies="",
@@ -105,10 +114,13 @@ class Proxy_pool(object):
                 # 使用代理访问
                 return response
             except Exception as e:
-                # print(e)
+                # traceback.print_exc()
+                # print("__wrapping_request")
+                print(e)
                 retry_count -= 1
                 # print("代理{ip}连接失败，更换代理".format(ip=proxy))
-        if response is None:
-            # 删除代理池中代理
-            self.__delete_proxy(proxy)
+            finally:
+                if response is None:
+                    # 删除代理池中代理
+                    self.__delete_proxy(proxy)
         return response

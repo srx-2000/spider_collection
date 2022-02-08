@@ -5,6 +5,7 @@ from zhihu_user_info_spider.util.Utils import Util
 
 
 class SpiderUtil(Util):
+
     def __init__(self):
         super().__init__()
 
@@ -31,7 +32,7 @@ class SpiderUtil(Util):
             cookies_list = self.json_result["cookies"]
             # print("cookie池："+str(cookies_list))
             cookie = random.choice(cookies_list)
-            print("当前使用的cookie是："+str(cookie)[0:80]+"."*10)
+            # print("当前使用的cookie是："+str(cookie)[0:80]+"."*10)
             return cookie
         else:
             print("请在util_content.json中配置至少一个cookies。")
@@ -51,3 +52,8 @@ class SpiderUtil(Util):
             return batch_size
         else:
             print("请在util_content.json中配置batch_size。")
+
+    def process_bar(self, percent, start_str='', end_str='', total_length=0):
+        bar = '\r' + start_str + ''.ljust(int(percent * total_length), "=") + '> {:0>5.2f}%|'.format(
+            percent * 100) + end_str
+        print(bar, end='', flush=True)
