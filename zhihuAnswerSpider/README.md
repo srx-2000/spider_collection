@@ -19,6 +19,12 @@
 5. 回答者id
 6. 回答者内容
 
+**使用方法：**
+
+1. git clone https://github.com/srx-2000/spider_collection.git
+2. pip install -r requirements.txt
+3. 运行`zhihu_answer.py`文件即可
+
 **单问题爬取模式**
 
 ​	**功能** 主要通过用户提供的问题id，爬取单个问题下的所有回答

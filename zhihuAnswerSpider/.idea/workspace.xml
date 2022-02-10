@@ -45,16 +45,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/spider" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\github clone\git_spider\zhihuAnswerSpider\spider" />
-      <recent name="D:\github clone\git_spider\zhihuAnswerSpider" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\github clone\git_spider\zhihuAnswerSpider\spider" />
       <recent name="D:\github clone\git_spider\zhihuAnswerSpider" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github clone\git_spider\zhihuAnswerSpider" />
+      <recent name="D:\github clone\git_spider\zhihuAnswerSpider\spider" />
     </key>
   </component>
   <component name="RunManager" selected="Python.zhihu_answer (1)">
@@ -137,6 +137,9 @@
       <workItem from="1634349184886" duration="37000" />
       <workItem from="1643460617894" duration="620000" />
       <workItem from="1644308980567" duration="3870000" />
+      <workItem from="1644418550011" duration="2506000" />
+      <workItem from="1644466185778" duration="1341000" />
+      <workItem from="1644496158532" duration="2214000" />
     </task>
     <servers />
   </component>
@@ -160,25 +163,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1644313425282" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1644315636385">
+    <state width="1493" height="320" key="GridCell.Tab.0.bottom" timestamp="1644468024687">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1644315636385" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1644315636385">
+    <state width="1493" height="320" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1644468024687" />
+    <state width="1493" height="320" key="GridCell.Tab.0.center" timestamp="1644468024687">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1644315636385" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1644315636385">
+    <state width="1493" height="320" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1644468024687" />
+    <state width="1493" height="320" key="GridCell.Tab.0.left" timestamp="1644468024687">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1644315636385" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1644315636385">
+    <state width="1493" height="320" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1644468024687" />
+    <state width="1493" height="320" key="GridCell.Tab.0.right" timestamp="1644468024687">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1644315636385" />
+    <state width="1493" height="320" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1644468024687" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/zhihuAnswerSpider$zhihu_answer__1_.coverage" NAME="zhihu_answer (1) Coverage Results" MODIFIED="1644316008558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider" />
+    <SUITE FILE_PATH="coverage/zhihuAnswerSpider$zhihu_answer__1_.coverage" NAME="zhihu_answer (1) Coverage Results" MODIFIED="1644466208884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider" />
     <SUITE FILE_PATH="coverage/zhihuAnswerSpider$zhihu_answer.coverage" NAME="zhihu_answer Coverage Results" MODIFIED="1631184696873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
