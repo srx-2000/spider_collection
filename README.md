@@ -75,7 +75,16 @@
 5. cookiejar
 6. threading
 
-**5.其他类型**
+**5.github相关**
+
+5.1 [github用户爬虫](https://github.com/srx-2000/spider_collection/tree/master/github_spider)
+
+1. requests
+2. json
+3. parsel
+4. threading
+
+**6.其他类型**
 
 5.1 [安居客武汉租房信息爬虫+数据清洗+分析+数据可视化](https://github.com/srx-2000/spider_collection/tree/master/anjuke_room_rent_info)
 
