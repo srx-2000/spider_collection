@@ -9,10 +9,6 @@ import execjs
 from spider.ProxyPool import Proxy_pool
 
 
-# headers = {
-#     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36'
-# }
-
 
 class zhihu_answer():
     question_id = 0
@@ -24,7 +20,7 @@ class zhihu_answer():
     proxy_pool = Proxy_pool()
 
     def __init__(self, begin_id, question_id, question_count=20):
-        self.cookie = "_zap=08e23a53-f86c-42da-87dc-f8a3ec8e602c; d_c0=\"AGAfR6B3zBOPTrcvoCVTQZQ4_3FyaBPBQA8=|1632919082\"; _9755xjdesxxd_=32; _xsrf=HEMAC43R4Qg3ggLPWJTVJeh7sV3CL5le; __snaker__id=NHSlBQya6QYHKfFU; captcha_ticket_v2=\"2|1:0|10:1643873917|17:captcha_ticket_v2|704:eyJ2YWxpZGF0ZSI6IkNOMzFfeEFKLjJIcXhYX3dBUWlXY1d5Sl9RTDRJdTVwSGtmbXRrSkFtT1JOVVdId2RqYy1Uc1NJT2owcG5lRGZuMFAtVUFqUGhkMGxGei5kUzFLbzBNU0RSdUlzT1pvUExwYUhfdFUyYTd4a3JfR1hzS0tEa3FRSjl6V1J1bFB0US1TeFFmSkR6a0dxbVRqaTh6ZjA5RHVhYnJhaW9TRUhGRm44SU5VTURPUHNCRXFsNGQ1SnEtcFBPZzBDNndSeXlUTmtSX2lETm1jYW5CbEgtRzJrdFEweDJPak1lRGFLTXNyRGtELXdBNm5EbGxJekI4TS0ydlBwRTFXQTg1blR2VW9Ua3JYQ2FMY0JiaGt6OFJrOENpSmxycVoyendmTFNRU21xaTR4WmltMVRnaWJvdE9JbjhaOXpQN1VIbnhyMFNwMUNocnByRnlaNEM4SEJLLnJDR0xvODFucjFkbUpva1BlcTlua0dDdER0RGF2bk9iZzdvVTh0ZGdUR3Zodnp3eUNyam5DZ1RsWFd5R2g1ZTg0SUJHekVhSXF2UzV2UFMuX2RzV1NHSjQ5ZS1mUjZFMWhJcktneXlWMmprZ0NtcEJrWGhuNXh4RDFjQUlBNy0xaU5PcENQNm5wQ1FQREdmbDVnalJZckN0NG9vV2NIcE5Dc21RLTB0dWtTYXRhMyJ9|bf532e06e808d9f51dbdff04478f10a060602f2d2ab18faedd13805388af9a00\"; l_cap_id=\"NDA5NzIyY2QyZmE4NDRkZWFmZjJkZDEyN2EyYjk5MTE=|1644029109|863ceb14febd07bef73cfa00a7bb12ba399bb5a0\"; r_cap_id=\"OTE2NDRjODA2OGEyNDBlMmFmOWRkYjI0MzdkMzc5MDI=|1644029109|3fc559b64c99bbdee97d2c1f28adb644390d19a6\"; cap_id=\"ZjFiOWZjNGMyMTY1NDBhMzg1ZDI4M2FhZTBkNzU2NjQ=|1644029109|8d900be5cb787427387252d152ce0b11f5fbe425\"; YD00517437729195%3AWM_TID=P4hPS7HsHSREVBQEFQN6ufGCAUs2OOWy; YD00517437729195%3AWM_NI=mbUbGtgyf2tPGJTuoO80F%2B8SEiYmfNys75FHo85R%2Fj1qJzg9fYpQp%2FHFBlddZKzmx24ScnZqMOqmOzxti7%2B0o%2FyUGL%2F2e18j5S3jG1%2BW57O1ipS6%2Fukz2bygARVwgXKmTjY%3D; YD00517437729195%3AWM_NIKE=9ca17ae2e6ffcda170e2e6eeb9fb5bfbb9848af36898bc8fa3d84a828a8eafb67b8998a3abd979a88d8aa2c72af0fea7c3b92aafbe9b83c680a5a7aad3f75c85969c96ee45fcf08accbb5987b7978ee546bbadf9d6c544ade8fbb3ae62f3af869be633a687c0b2f3258c9a8e8de7709a95b68efb3af88dad8fd97b8f91bf8ece72bcaca7d8aa3cadf1b7b6c648edeeabd2bb62f78dfd8bc63be989fbd8ce3babb09dd7ae7fa9a6fe83fc6d838e9a98e65489b39c8bdc37e2a3; Hm_lvt_98beee57fd2ef70ccdd5ca52b9740c49=1644039481,1644049935,1644116007,1644141996; SESSIONID=2jyFaheFXujkqsFYdYM9m6o8e6ENneWErq2KUFitQ2x; JOID=UFASB01tNQ826Coefmub14E_5X9vVVB1co1IdDsxSmpem11SKDaY8VHmLxJ_9r3iE0RIk0g9QsIBG5mc_zGsZrw=; osd=V1ERAkpqNAwz7y0ffW6c0IA84HhoVFNwdYpJdz42TWtdnlpVKTWd9lbnLBd48bzhFkNPkks4RcUAGJyb-DCvY7s=; gdxidpyhxdE=8KGdmno6oN5xwoyyI1oKnQo9Ln7g3MOMEIj4IcYNV8T%2FlajpNnjyP5VSx5HT%2BpUMUN0r9W709cD81mTcD%2FvBj31dWy%5C2C5yfWK%2BPfv1y4YgNBKlESmv4oaPyIgX1Z2LYTKBWjlQZR8koxv2TMEOo24g5feI5v1Zwn6qZkU3EhGR18y5R%3A1644144580079; Hm_lpvt_98beee57fd2ef70ccdd5ca52b9740c49=1644144043; captcha_session_v2=\"2|1:0|10:1644144043|18:captcha_session_v2|88:eDhBWnRQRTIxaXJvNTd2Wks1c25iYUNnU2tKWUptT3hBK0ZuTGZHRWt5Y0htdFZpQyt1ZzJKekpSeC9RVWZsaA==|1e9306153c8d3314afa4ad49ffbc5de16c51954d522efbd60a40591916951dc9\"; KLBRSID=5430ad6ccb1a51f38ac194049bce5dfe|1644144081|1644135071"
+        self.cookie = ""
         self.begin_id = begin_id
         self.question_id = question_id
         self.question_count = question_count
@@ -36,6 +32,8 @@ class zhihu_answer():
     def get_headers(self, api_url):
         star = 'd_c0='
         end = ';'
+        if self.cookie == "":
+            raise Exception("请在27行输入cookie")
         cookie_mes = self.cookie[self.cookie.index(star):].replace(star, '')
         cookie_mes = cookie_mes[:cookie_mes.index(end)]
         parse_url = api_url.replace("https://www.zhihu.com", "")
