@@ -5,6 +5,7 @@ window = dom.window;
 document = window.document;
 XMLHttpRequest = window.XMLHttpRequest;
 
+
 function t(e) {
     return (t = "function" == typeof Symbol && "symbol" == typeof Symbol.A ? function (e) {
                 return typeof e
