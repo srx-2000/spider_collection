@@ -32,7 +32,7 @@ class zhihu_answer():
         star = 'd_c0='
         end = ';'
         if self.cookie == "":
-            raise Exception("请在23行输入cookie")
+            raise Exception("请在22行输入cookie")
         cookie_mes = self.cookie[self.cookie.index(star):].replace(star, '')
         cookie_mes = cookie_mes[:cookie_mes.index(end)]
         parse_url = api_url.replace("https://www.zhihu.com", "")
@@ -44,12 +44,13 @@ class zhihu_answer():
         self.header["x-app-za"] = 'OS=Web'
         self.header["x-zse-93"] = "101_3_2.0"
         self.header["x-zse-96"] = encrypt_str
-        print(self.header["x-zse-96"])
+        # print(self.header["x-zse-96"])
         return self.header
 
     def get_answer(self, question_id, limit=1):
         now = 0 - limit
         total_num = self.get_total(question_id)
+        limit = min(total_num, limit)
         content_list = []
         author_name_list = []
         author_id_list = []
@@ -215,7 +216,7 @@ if __name__ == '__main__':
         zhihu.single_answer(id)
     elif int(model) == 2:
         count = 20
-        count = input("请输入想要爬取的相关问题的个数（默认为20，最大为400，知乎超过500会有反爬验证）:\n")
+        count = input("请输入想要爬取的相关问题的个数（默认为20，最大为400，知乎超过500会有反爬验证，可以设置ip代理解决）:\n")
         zhihu = zhihu_answer(id, id, int(count))
         zhihu.download_all_similar_question()
     else:
