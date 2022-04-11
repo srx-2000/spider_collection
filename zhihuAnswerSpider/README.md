@@ -75,3 +75,8 @@
 * 2022.3.14
 
   修复问答数量小于爬取限制时，无法获取问答的bug，感谢[issue#21](https://github.com/srx-2000/spider_collection/issues/21)
+  
+* 2022.4.11
+
+  修复多线程爬取失败报错，感谢[issue#27](https://github.com/srx-2000/spider_collection/issues/27)
+

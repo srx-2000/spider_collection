@@ -48,7 +48,7 @@ class zhihu_answer():
         return self.header
 
     def get_answer(self, question_id, limit=1):
-        now = 0 - limit
+        now = 0
         total_num = self.get_total(question_id)
         limit = min(total_num, limit)
         content_list = []
@@ -57,7 +57,6 @@ class zhihu_answer():
         author_url_token_list = []
         dict = {}
         for i in range(0, total_num // limit):
-            now = now + limit
             url = "https://www.zhihu.com/api/" \
                   "v4/questions/{question_id}/answers?include=data%5B*%5D." \
                   "is_normal%2Cadmin_closed_comment%2Creward_info%2Cis_co" \
@@ -80,6 +79,7 @@ class zhihu_answer():
                 author_name_list.append(i['author']['name'])
                 author_id_list.append(i['author']['id'])
                 author_url_token_list.append(i['author']['url_token'])
+            now = now + limit
         dict["content_list"] = content_list
         dict["author_name_list"] = author_name_list
         dict["author_id_list"] = author_id_list
@@ -87,6 +87,7 @@ class zhihu_answer():
         return dict
 
     def get_total(self, question_id):
+        # time.sleep(1)
         url = "https://www.zhihu.com/api/" \
               "v4/questions/{question_id}/answers?include=data%5B*%5D." \
               "is_normal%2Cadmin_closed_comment%2Creward_info%2Cis_co" \
@@ -101,7 +102,6 @@ class zhihu_answer():
               "table_of_content.enabled&offset=&limit={limit}&sort_by=default&platform=desktop".format(
             question_id=str(question_id), limit=20)
         response = self.proxy_pool.get(url, headers=self.get_headers(url), anonymity=False)
-        time.sleep(1)
         json_result = json.loads(response.content)
         next_json = json_result
         total_num = next_json['paging']['totals']
@@ -116,15 +116,17 @@ class zhihu_answer():
         return text_list
 
     def get_question_title(self, question_id):
-        url = "https://www.zhihu.com/api/v4/questions/{question_id}/answers?include=data%5B%2A%5D.is_normal%2Cadmin_closed_" \
-              "comment%2Creward_info%2Cis_collapsed%2Cannotation_action%2Cannotation_detail%2Ccollapse_reason%2Cis_stick" \
-              "y%2Ccollapsed_by%2Csuggest_edit%2Ccomment_count%2Ccan_comment%2Ccontent%2Ceditable_content%2Cattachment%" \
-              "2Cvoteup_count%2Creshipment_settings%2Ccomment_permission%2Ccreated_time%2Cupdated_time%2Creview_info%2Cr" \
-              "elevant_info%2Cquestion%2Cexcerpt%2Cis_labeled%2Cpaid_info%2Cpaid_info_content%2Crelationship.is_authoriz" \
-              "ed%2Cis_author%2Cvoting%2Cis_thanked%2Cis_nothelp%2Cis_recognized%3Bdata%5B%2A%5D.mark_infos%5B%2A%5D.url" \
-              "%3Bdata%5B%2A%5D.author.follower_count%2Cvip_info%2Cbadge%5B%2A%5D.topics%3Bdata%5B%2A%5D.settings.table_" \
-              "of_content.enabled&limit={limit}&offset=0&platform=desktop&sort_by=default".format(
-            question_id=str(question_id), limit=20)
+        url = f"https://www.zhihu.com/api/v4/questions/{question_id}/answers?" \
+              "include=data%5B*%5D.is_normal%2Cadmin_closed_comment%2Creward_info%2Cis_co" \
+              "llapsed%2Cannotation_action%2Cannotation_detail%2Ccollapse" \
+              "_reason%2Cis_sticky%2Ccollapsed_by%2Csuggest_edit%2Ccomment_co" \
+              "unt%2Ccan_comment%2Ccontent%2Ceditable_content%2Cattachment%2Cvote" \
+              "up_count%2Creshipment_settings%2Ccomment_permission%2Ccreated_time%2C" \
+              "updated_time%2Creview_info%2Crelevant_info%2Cquestion%2Cexcerpt%2Cis_labe" \
+              "led%2Cpaid_info%2Cpaid_info_content%2Crelationship.is_authorized%2Cis_author%" \
+              "2Cvoting%2Cis_thanked%2Cis_nothelp%2Cis_recognized%3Bdata%5B*%5D.mark_infos%5B*%5D" \
+              ".url%3Bdata%5B*%5D.author.follower_count%2Cbadge%5B*%5D.topics%3Bdata%5B*%5D.settings." \
+              "table_of_content.enabled&offset=0&limit=3&sort_by=default&platform=desktop"
         # print(url)
         response = self.proxy_pool.get(url, headers=self.get_headers(url), anonymity=False)
         json_result = json.loads(response.content)
@@ -137,12 +139,14 @@ class zhihu_answer():
         print("全部回答数量:" + str(self.get_total(question_id)))
         print("爬取的问题：" + question_title + "——问题id为：" + str(question_id))
         print("爬取ing.....请等待，等待时间依据回答数量而定")
-        result_dict = self.get_answer(question_id, limit=20)
-
-        # self.get_answer(question_id)
-        text_list = self.format_content(result_dict['content_list'])
         try:
-            with open(os.path.dirname(os.getcwd()) + "\\result\\" + question_title + ".txt", mode="w",
+            result_dict = self.get_answer(question_id, limit=20)
+            # self.get_answer(question_id)
+            text_list = self.format_content(result_dict['content_list'])
+            result_path = os.path.dirname(os.getcwd()) + os.sep + "result"
+            if not os.path.exists(result_path):
+                os.mkdir(result_path)
+            with open(os.path.dirname(os.getcwd()) + os.sep + "result" + os.sep + question_title + ".txt", mode="w",
                       encoding='utf-8') as f:
                 f.write("问题：" + question_title + "\n")
                 f.write("问题id：" + str(question_id) + "\n\n")
@@ -191,9 +195,9 @@ class zhihu_answer():
 
     def download_all_similar_question(self):
         threads = []
-        time.sleep(3)
         if len(self.copy_list) >= self.question_count:
             for i in self.copy_list:
+                time.sleep(1)
                 th = threading.Thread(target=self.single_answer, args=(i,))
                 # print(th.name)
                 th.start()
@@ -209,15 +213,19 @@ class zhihu_answer():
 
 
 if __name__ == '__main__':
-    model = input("请输入想要选取的模式:1.爬取单个问题  2.爬取相关问题\n")
+    model = input("请输入想要选取的模式:1.爬取单个问题  2.爬取相关问题(由于知乎速率限制问题，这里将线程间隔时间设为1s【或采用高匿名代理】)\n")
     id = input("请输入想要爬取的问题的id，或相关问题的起点问题的id:\n")
     if int(model) == 1:
         zhihu = zhihu_answer(id, id)
         zhihu.single_answer(id)
     elif int(model) == 2:
-        count = 20
         count = input("请输入想要爬取的相关问题的个数（默认为20，最大为400，知乎超过500会有反爬验证，可以设置ip代理解决）:\n")
-        zhihu = zhihu_answer(id, id, int(count))
+        try:
+            count = int(count)
+        except:
+            print("输入非数字，默认20开始爬取")
+            count = 20
+        zhihu = zhihu_answer(id, id, count)
         zhihu.download_all_similar_question()
     else:
         print("请输入规范数字1或2")
