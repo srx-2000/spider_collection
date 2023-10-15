@@ -49,6 +49,8 @@
 5. threading
 6. pandas
 
+2.3 [知乎加密合集](https://github.com/srx-2000/spider_collection/tree/master/zhihuEncrypt)
+
 **3.微博相关**
 
 3.1 [微博个人信息爬虫](https://github.com/srx-2000/spider_collection/tree/master/weibo_user_info)
