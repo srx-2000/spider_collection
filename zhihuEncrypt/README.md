@@ -11,6 +11,8 @@
 
 ​	好了，废了那么多话开始这个代码的说明。
 
+[TOC]
+
 ## 准备前提
 
 ### 开发环境
@@ -141,6 +143,21 @@ this.T, this.C, this.S, this.i
 
 ​	作为我自己逆向并发出来的第一个jsvmp，还是和大家叨叨了很多废话。也希望大家可以在这个项目中学到一些基础的爬虫知识。同时也欢迎大家多多向该库提出issue，或是在issue中进行讨论。一切都以学习交流为目的嘛。
 
+## 更新
+
+#### 2023.10.18
+
+​	知乎pc版，补环境：[js文件](https://github.com/srx-2000/spider_collection/blob/master/zhihuEncrypt/zhihu_encrypt_js.js)、[py脚本文件](https://github.com/srx-2000/spider_collection/blob/master/zhihuEncrypt/zhihu_encrypt_js.py)
+
+#### 2023.10.15
+
+​	知乎pc版，硬逆向：[py脚本文件](https://github.com/srx-2000/spider_collection/blob/master/zhihuEncrypt/zhihu_encrypt.py)
+
+## 鸣谢
+
+​	在此感谢[b站教学](https://www.bilibili.com/video/BV1fr4y1R7XQ/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=fc7ee585e1ddf246f30a0860b09ef366)，本子项目中pc版补环境参考学习了该视频中的方法与流程。
+
 ## 声明
 
 ​	该脚本仅用于学习交流，如有非法使用本人概不负责。
+
